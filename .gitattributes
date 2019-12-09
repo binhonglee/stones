@@ -1,0 +1,4 @@
+*.html  linguist-generated=true -diff
+*.idx   linguist-generated=true -diff
+
+LICENSE text eol=lf linguist-generated=true

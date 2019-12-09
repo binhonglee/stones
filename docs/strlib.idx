@@ -1,0 +1,20 @@
+Default	strlib.html#Default	Case.Default	
+Camel	strlib.html#Camel	Case.Camel	
+Kebab	strlib.html#Kebab	Case.Kebab	
+Lower	strlib.html#Lower	Case.Lower	
+Pascal	strlib.html#Pascal	Case.Pascal	
+Snake	strlib.html#Snake	Case.Snake	
+Upper	strlib.html#Upper	Case.Upper	
+Case	strlib.html#Case	strlib: Case	
+setAcronyms	strlib.html#setAcronyms,HashSet[string]	strlib: setAcronyms(configAcronyms: HashSet[string]): void	
+camelCase	strlib.html#camelCase,string,HashSet[string]	strlib: camelCase(variable: string; acronyms: HashSet[string] = acronyms): string	
+kebabCase	strlib.html#kebabCase,string	strlib: kebabCase(variable: string): string	
+lowerCase	strlib.html#lowerCase,string	strlib: lowerCase(variable: string): string	
+pascalCase	strlib.html#pascalCase,string,HashSet[string]	strlib: pascalCase(variable: string; acronyms: HashSet[string] = acronyms): string	
+upperCase	strlib.html#upperCase,string	strlib: upperCase(variable: string): string	
+allCases	strlib.html#allCases,string,HashSet[string]	strlib: allCases(variable: string; acronyms: HashSet[string] = acronyms): Table[Case, string]	
+count	strlib.html#count,string,HashSet[char]	strlib: count(word: string; chars: HashSet[char]): Table[char, int]	
+parseInt	strlib.html#parseInt,char	strlib: parseInt(number: char): int	
+replace	strlib.html#replace,seq[T][char],Table[string,string]	strlib: replace(input: var seq[char]; replacements: Table[string, string]): seq[char]	
+seqCharToString	strlib.html#seqCharToString,seq[T][char]	strlib: seqCharToString(input: seq[char]): string	
+maxWidth	strlib.html#maxWidth,seq[T][string]	strlib: maxWidth(fields: seq[string]): seq[int]	
