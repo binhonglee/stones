@@ -8,3 +8,4 @@ INFO	log.html#INFO	AlertLevel.INFO
 DEBUG	log.html#DEBUG	AlertLevel.DEBUG	
 AlertLevel	log.html#AlertLevel	log: AlertLevel	
 LOG	log.html#LOG,AlertLevel,string,typedesc	log: LOG(level: AlertLevel; message: string; exception: typedesc = GenericError): void	
+setLevel	log.html#setLevel,AlertLevel	log: setLevel(level: AlertLevel): void	

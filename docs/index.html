@@ -805,7 +805,7 @@ function main() {
 <div class="document" id="documentId">
   <div class="container">
     <h1 class="title">Index</h1>
-    Modules: <a href="collib.html">collib</a>, <a href="log.html">log</a>, <a href="strlib.html">strlib</a>.<br/><p /><h2>API symbols</h2>
+    Modules: <a href="genlib.html">genlib</a>, <a href="log.html">log</a>, <a href="strlib.html">strlib</a>.<br/><p /><h2>API symbols</h2>
 <dl><dt><a name="AlertLevel" href="#AlertLevel"><span>AlertLevel:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="log: AlertLevel" href="log.html#AlertLevel">log: AlertLevel</a></li>
@@ -854,6 +854,14 @@ function main() {
 <li><a class="reference external"
           data-doc-search-tag="log: GenericError" href="log.html#GenericError">log: GenericError</a></li>
           </ul></dd>
+<dt><a name="getResult" href="#getResult"><span>getResult:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="genlib: getResult[T](input: T; p: proc (x: var T)): T" href="genlib.html#getResult%2CT%2Cproc%28T%29">genlib: getResult[T](input: T; p: proc (x: var T)): T</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="genlib: getResult[T](input: T; p: proc (x: var T; y: T); arg: T): T" href="genlib.html#getResult%2CT%2Cproc%28T%2CT%29%2CT">genlib: getResult[T](input: T; p: proc (x: var T; y: T); arg: T): T</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="genlib: getResult[T](input: T; p: proc (x: var T; y: varargs[T]); args: varargs[T]): T" href="genlib.html#getResult%2CT%2Cproc%28T%2Cvarargs%5BT%5D%29%2Cvarargs%5BT%5D">genlib: getResult[T](input: T; p: proc (x: var T; y: varargs[T]); args: varargs[T]): T</a></li>
+          </ul></dd>
 <dt><a name="INFO" href="#INFO"><span>INFO:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="AlertLevel.INFO" href="log.html#INFO">AlertLevel.INFO</a></li>
@@ -884,9 +892,9 @@ function main() {
           </ul></dd>
 <dt><a name="merge" href="#merge"><span>merge:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="collib: merge[T](first: HashSet[T]; second: HashSet[T]): HashSet[T]" href="collib.html#merge%2CHashSet%5BT%5D%2CHashSet%5BT%5D">collib: merge[T](first: HashSet[T]; second: HashSet[T]): HashSet[T]</a></li>
+          data-doc-search-tag="genlib: merge[T](first: HashSet[T]; second: HashSet[T]): HashSet[T]" href="genlib.html#merge%2CHashSet%5BT%5D%2CHashSet%5BT%5D">genlib: merge[T](first: HashSet[T]; second: HashSet[T]): HashSet[T]</a></li>
           <li><a class="reference external"
-          data-doc-search-tag="collib: merge[A, B](first: Table[A, B]; second: Table[A, B]; ignoreDup: bool = true): Table[A, B]" href="collib.html#merge%2CTable%5BA%2CB%5D%2CTable%5BA%2CB%5D%2Cbool">collib: merge[A, B](first: Table[A, B]; second: Table[A, B]; ignoreDup: bool = true): Table[A, B]</a></li>
+          data-doc-search-tag="genlib: merge[A, B](first: Table[A, B]; second: Table[A, B]; ignoreDup: bool = true): Table[A, B]" href="genlib.html#merge%2CTable%5BA%2CB%5D%2CTable%5BA%2CB%5D%2Cbool">genlib: merge[A, B](first: Table[A, B]; second: Table[A, B]; ignoreDup: bool = true): Table[A, B]</a></li>
           </ul></dd>
 <dt><a name="parseInt" href="#parseInt"><span>parseInt:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -911,6 +919,10 @@ function main() {
 <dt><a name="setAcronyms" href="#setAcronyms"><span>setAcronyms:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="strlib: setAcronyms(configAcronyms: HashSet[string]): void" href="strlib.html#setAcronyms%2CHashSet%5Bstring%5D">strlib: setAcronyms(configAcronyms: HashSet[string]): void</a></li>
+          </ul></dd>
+<dt><a name="setLevel" href="#setLevel"><span>setLevel:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="log: setLevel(level: AlertLevel): void" href="log.html#setLevel%2CAlertLevel">log: setLevel(level: AlertLevel): void</a></li>
           </ul></dd>
 <dt><a name="Snake" href="#Snake"><span>Snake:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -937,7 +949,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-12-09 03:57:50 UTC</small>
+        <small>Made with Nim. Generated: 2019-12-12 05:06:45 UTC</small>
       </div>
     </div>
   </div>

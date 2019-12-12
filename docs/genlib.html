@@ -16,7 +16,7 @@
 <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600' rel='stylesheet' type='text/css'/>
 
 <!-- CSS -->
-<title>collib</title>
+<title>genlib</title>
 <style type="text/css" >
 /*
 Stylesheet for use with Docutils/rst2html.
@@ -804,7 +804,7 @@ function main() {
 <body onload="main()">
 <div class="document" id="documentId">
   <div class="container">
-    <h1 class="title">collib</h1>
+    <h1 class="title">genlib</h1>
     <div class="row">
   <div class="three columns">
   <div id="global-links">
@@ -830,6 +830,12 @@ function main() {
     title="merge[A, B](first: Table[A, B]; second: Table[A, B]; ignoreDup: bool = true): Table[A, B]"><wbr />merge<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#merge%2CHashSet%5BT%5D%2CHashSet%5BT%5D"
     title="merge[T](first: HashSet[T]; second: HashSet[T]): HashSet[T]"><wbr />merge<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#getResult%2CT%2Cproc%28T%29"
+    title="getResult[T](input: T; p: proc (x: var T)): T"><wbr />get<wbr />Result<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#getResult%2CT%2Cproc%28T%2CT%29%2CT"
+    title="getResult[T](input: T; p: proc (x: var T; y: T); arg: T): T"><wbr />get<wbr />Result<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#getResult%2CT%2Cproc%28T%2Cvarargs%5BT%5D%29%2Cvarargs%5BT%5D"
+    title="getResult[T](input: T; p: proc (x: var T; y: varargs[T]); args: varargs[T]): T"><wbr />get<wbr />Result<span class="attachedType"></span></a></li>
 
   </ul>
 </li>
@@ -850,9 +856,9 @@ function main() {
 
 Merge <tt class="docutils literal"><span class="pre">first</span></tt> and <tt class="docutils literal"><span class="pre">second</span></tt> into a single <tt class="docutils literal"><span class="pre">Table[A, B]</span></tt>. Exception will be thrown if there are different values with the same key between the two tables. If <tt class="docutils literal"><span class="pre">ignoreDup</span></tt> is set to <tt class="docutils literal"><span class="pre">false</span></tt>, duplicated keys from the two tables will also throw an exception.
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/stones/collib.nim#L4"
+href="https://github.com/binhonglee/stones/tree/master/src/genlib.nim#L4"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/collib.nim#L4" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/master/src/genlib.nim#L4" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="merge,HashSet[T],HashSet[T]"></a>
@@ -861,9 +867,42 @@ class="link-seesrc" target="_blank">Source</a>
 
 Merge <tt class="docutils literal"><span class="pre">first</span></tt> and <tt class="docutils literal"><span class="pre">second</span></tt> into a single <tt class="docutils literal"><span class="pre">HashSet[T]</span></tt>.
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/stones/collib.nim#L20"
+href="https://github.com/binhonglee/stones/tree/master/src/genlib.nim#L20"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/collib.nim#L20" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/master/src/genlib.nim#L20" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<a id="getResult,T,proc(T)"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#getResult%2CT%2Cproc%28T%29"><span class="Identifier">getResult</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">input</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">p</span><span class="Other">:</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
+<dd>
+
+Wrapper around in place substituted <tt class="docutils literal"><span class="pre">input</span></tt> when its immutable.
+&nbsp;&nbsp;<a
+href="https://github.com/binhonglee/stones/tree/master/src/genlib.nim#L27"
+class="link-seesrc" target="_blank">Source</a>
+<a href="https://github.com/binhonglee/stones/edit/master/src/genlib.nim#L27" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<a id="getResult,T,proc(T,T),T"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#getResult%2CT%2Cproc%28T%2CT%29%2CT"><span class="Identifier">getResult</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">input</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">p</span><span class="Other">:</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
+<dd>
+
+Wrapper around in place substituted <tt class="docutils literal"><span class="pre">input</span></tt> when its immutable.
+&nbsp;&nbsp;<a
+href="https://github.com/binhonglee/stones/tree/master/src/genlib.nim#L32"
+class="link-seesrc" target="_blank">Source</a>
+<a href="https://github.com/binhonglee/stones/edit/master/src/genlib.nim#L32" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<a id="getResult,T,proc(T,varargs[T]),varargs[T]"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#getResult%2CT%2Cproc%28T%2Cvarargs%5BT%5D%29%2Cvarargs%5BT%5D"><span class="Identifier">getResult</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">input</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">p</span><span class="Other">:</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">args</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
+<dd>
+
+Wrapper around in place substituted <tt class="docutils literal"><span class="pre">input</span></tt> when its immutable.
+&nbsp;&nbsp;<a
+href="https://github.com/binhonglee/stones/tree/master/src/genlib.nim#L37"
+class="link-seesrc" target="_blank">Source</a>
+<a href="https://github.com/binhonglee/stones/edit/master/src/genlib.nim#L37" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -876,7 +915,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-12-09 03:57:49 UTC</small>
+        <small>Made with Nim. Generated: 2019-12-12 05:06:44 UTC</small>
       </div>
     </div>
   </div>

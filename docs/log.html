@@ -839,6 +839,8 @@ function main() {
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#LOG%2CAlertLevel%2Cstring%2Ctypedesc"
     title="LOG(level: AlertLevel; message: string; exception: typedesc = GenericError): void"><wbr />LOG<span class="attachedType">AlertLevel</span></a></li>
+  <li><a class="reference" href="#setLevel%2CAlertLevel"
+    title="setLevel(level: AlertLevel): void"><wbr />set<wbr />Level<span class="attachedType">AlertLevel</span></a></li>
 
   </ul>
 </li>
@@ -860,9 +862,9 @@ function main() {
 
 Default exception to throw if there is no error passed in with a <tt class="docutils literal"><span class="pre">FATAL</span></tt> call.
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/stones/log.nim#L5"
+href="https://github.com/binhonglee/stones/tree/master/src/log.nim#L5"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/log.nim#L5" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/master/src/log.nim#L5" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="AlertLevel"></a>
@@ -872,9 +874,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 Level of noise to be logged.
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/stones/log.nim#L9"
+href="https://github.com/binhonglee/stones/tree/master/src/log.nim#L9"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/log.nim#L9" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/master/src/log.nim#L9" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -886,11 +888,22 @@ class="link-seesrc" target="_blank">Source</a>
 <dt><pre><span class="Keyword">proc</span> <a href="#LOG%2CAlertLevel%2Cstring%2Ctypedesc"><span class="Identifier">LOG</span></a><span class="Other">(</span><span class="Identifier">level</span><span class="Other">:</span> <a href="log.html#AlertLevel"><span class="Identifier">AlertLevel</span></a><span class="Other">;</span> <span class="Identifier">message</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">exception</span><span class="Other">:</span> <span class="Identifier">typedesc</span> <span class="Other">=</span> <span class="Identifier">GenericError</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span></pre></dt>
 <dd>
 
-Log message (and possibly throw error).
+Log message (and throw error if <tt class="docutils literal"><span class="pre">level</span></tt> is <tt class="docutils literal"><span class="pre">FATAL</span></tt>).
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/stones/log.nim#L48"
+href="https://github.com/binhonglee/stones/tree/master/src/log.nim#L50"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/log.nim#L48" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/master/src/log.nim#L50" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<a id="setLevel,AlertLevel"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#setLevel%2CAlertLevel"><span class="Identifier">setLevel</span></a><span class="Other">(</span><span class="Identifier">level</span><span class="Other">:</span> <a href="log.html#AlertLevel"><span class="Identifier">AlertLevel</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">GenericError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+Set global <tt class="docutils literal"><span class="pre">AlertLevel</span></tt> (if <tt class="docutils literal"><span class="pre">LOG()</span></tt> level is lower than the level set here, it will be ignored.)
+&nbsp;&nbsp;<a
+href="https://github.com/binhonglee/stones/tree/master/src/log.nim#L57"
+class="link-seesrc" target="_blank">Source</a>
+<a href="https://github.com/binhonglee/stones/edit/master/src/log.nim#L57" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -903,7 +916,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-12-09 03:57:50 UTC</small>
+        <small>Made with Nim. Generated: 2019-12-12 05:06:44 UTC</small>
       </div>
     </div>
   </div>

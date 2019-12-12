@@ -16,6 +16,8 @@ type
         INFO = 5,
         DEBUG = 6,
 
+var LEVEL: AlertLevel = DEBUG
+
 proc prefix(level: AlertLevel): string =
     case level
     of FATAL:
@@ -46,7 +48,13 @@ proc prefix(level: AlertLevel): string =
         result = "DEBUG"
 
 proc LOG*(level: AlertLevel, message: string, exception: typedesc = GenericError): void =
-    ## Log message (and possibly throw error).
-    echo indent(message, 1, prefix(level) & ": ")
+    ## Log message (and throw error if `level` is `FATAL`).
+    if LEVEL >= level:
+        echo indent(message, 1, prefix(level) & ": ")
     if level == FATAL:
         raise newException(exception, message)
+
+proc setLevel*(level: AlertLevel): void =
+    ## Set global `AlertLevel` (if `LOG()` level is lower than the level set here, it will be ignored.)
+    LEVEL = level
+    LOG(INFO, "Set logging level to " & $ord(level))

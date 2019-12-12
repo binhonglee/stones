@@ -1,2 +1,0 @@
-merge	collib.html#merge,Table[A,B],Table[A,B],bool	collib: merge[A, B](first: Table[A, B]; second: Table[A, B]; ignoreDup: bool = true): Table[A, B]	
-merge	collib.html#merge,HashSet[T],HashSet[T]	collib: merge[T](first: HashSet[T]; second: HashSet[T]): HashSet[T]	

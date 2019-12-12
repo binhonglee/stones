@@ -23,3 +23,18 @@ proc merge*[T](first: HashSet[T], second: HashSet[T]): HashSet[T] =
 
     for item in second.items:
         result.incl(item)
+
+proc getResult*[T](input: T, p: proc (x: var T)): T =
+    ## Wrapper around in place substituted `input` when its immutable.
+    result = input
+    p(result)
+
+proc getResult*[T](input: T, p: proc (x: var T, y: T), arg: T): T =
+    ## Wrapper around in place substituted `input` when its immutable.
+    result = input
+    p(result, arg)
+
+proc getResult*[T](input: T, p: proc (x: var T, y: varargs[T]), args: varargs[T]): T =
+    ## Wrapper around in place substituted `input` when its immutable.
+    result = input
+    p(result, args)
