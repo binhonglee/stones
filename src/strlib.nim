@@ -49,6 +49,21 @@ proc upperCase*(variable: string): string =
     ## Converts `snake_case` string to `UPPER_CASE`.
     result = toUpperAscii(variable)
 
+proc format*(c: Case, variable: string, acronyms: HashSet[string] = acronyms): string =
+    case c
+    of Camel:
+        result = camelCase(variable, acronyms)
+    of Kebab:
+        result = kebabCase(variable)
+    of Lower:
+        result = lowerCase(variable)
+    of Pascal:
+        result = pascalCase(variable, acronyms)
+    of Upper:
+        result = upperCase(variable)
+    else:
+        result = variable
+
 proc allCases*(variable: string, acronyms: HashSet[string] = acronyms): Table[Case, string] =
     ## Get a `Table[Case, string]` of all the difference cases from `variable`.
     result = initTable[Case, string]()
@@ -112,6 +127,12 @@ proc seqCharToString*(input: seq[char]): string =
     for cz in input:
         add(result, cz)
 
+proc width*(strs: seq[string]): seq[int] =
+    result = newSeq[int](0)
+
+    for i in 0..(strs.len() - 1):
+        result.add(strs[i].len())
+
 proc maxWidth*(fields: seq[string]): seq[int] =
     ## Get longest width string for each column of the field (separated by space).
     result = newSeq[int](0)
@@ -123,3 +144,45 @@ proc maxWidth*(fields: seq[string]): seq[int] =
                 result.add(field[i].len())
             elif field[i].len() > result[i]:
                 result[i] = field[i].len()
+
+proc find*(str: string, open: char, close: char, toFind: string): seq[int] =
+    ## Find location of `toFind` in `str` when the `open` and `close` character count is the same
+    runnableExamples:
+        doAssert find("<A,B>,B", '<', '>', ",") == @[5]
+        doAssert find("A,<B,C>", '<', '>', ",") == @[1]
+    var oCount: int = 0
+    var cCount: int = 0
+    result = newSeq[int](0)
+
+    var i: int = 0
+    for c in str.items:
+        if c == open:
+            inc(oCount)
+        elif c == close:
+            inc(cCount)
+        elif oCount == cCount:
+            var j: int = 0
+            while i + j < str.len() and j < toFind.len() and str[i + j] == toFind[j]:
+                inc(j)
+            if toFind.len() == j:
+                result.add(i)
+        inc(i)
+
+proc split*(str: string, open: char, close: char, separator: string): seq[string] =
+    ## Split string into a sequence of string based on the given info from `find <#find,string,string,char,char,string>`_ .
+    runnableExamples:
+        doAssert split("<A,B>,B", '<', '>', ",") == @["<A,B>", "B"]
+        doAssert split("<A, <B, C>>, <A, <B, C>>, <X, Y>", '<', '>', ", ") == @["<A, <B, C>>", "<A, <B, C>>", "<X, Y>"]
+    result = newSeq[string](0)
+    var pos: seq[int] = find(str, open, close, separator)
+    pos.add(str.len())
+    var prev: int = 0
+    for p in pos:
+        var i: int = 0
+        var s: string = newString(p - prev)
+
+        while prev + i < p:
+            s[i] = str[prev + i]
+            inc(i)
+        result.add(s)
+        prev = p + separator.len()
