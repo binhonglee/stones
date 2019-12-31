@@ -848,6 +848,8 @@ function main() {
     title="pascalCase(variable: string; acronyms: HashSet[string] = acronyms): string"><wbr />pascal<wbr />Case<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#upperCase%2Cstring"
     title="upperCase(variable: string): string"><wbr />upper<wbr />Case<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#format%2CCase%2Cstring%2CHashSet%5Bstring%5D"
+    title="format(c: Case; variable: string; acronyms: HashSet[string] = acronyms): string"><wbr />format<span class="attachedType">Case</span></a></li>
   <li><a class="reference" href="#allCases%2Cstring%2CHashSet%5Bstring%5D"
     title="allCases(variable: string; acronyms: HashSet[string] = acronyms): Table[Case, string]"><wbr />all<wbr />Cases<span class="attachedType">Case</span></a></li>
   <li><a class="reference" href="#count%2Cstring%2CHashSet%5Bchar%5D"
@@ -858,8 +860,14 @@ function main() {
     title="replace(input: var seq[char]; replacements: Table[string, string]): seq[char]"><wbr />replace<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#seqCharToString%2Cseq%5BT%5D%5Bchar%5D"
     title="seqCharToString(input: seq[char]): string"><wbr />seq<wbr />Char<wbr />To<wbr />String<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#width%2Cseq%5BT%5D%5Bstring%5D"
+    title="width(strs: seq[string]): seq[int]"><wbr />width<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#maxWidth%2Cseq%5BT%5D%5Bstring%5D"
     title="maxWidth(fields: seq[string]): seq[int]"><wbr />max<wbr />Width<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#find%2Cstring%2Cchar%2Cchar%2Cstring"
+    title="find(str: string; open: char; close: char; toFind: string): seq[int]"><wbr />find<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#split%2Cstring%2Cchar%2Cchar%2Cstring"
+    title="split(str: string; open: char; close: char; separator: string): seq[string]"><wbr />split<span class="attachedType"></span></a></li>
 
   </ul>
 </li>
@@ -884,7 +892,7 @@ Supported case types.
 &nbsp;&nbsp;<a
 href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L9"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/master/src/strlib.nim#L9" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L9" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -900,7 +908,7 @@ Setter for acronyms to always apply ALLCAPS.
 &nbsp;&nbsp;<a
 href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L19"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/master/src/strlib.nim#L19" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L19" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="camelCase,string,HashSet[string]"></a>
@@ -912,7 +920,7 @@ Converts <tt class="docutils literal"><span class="pre">snake_case</span></tt> s
 &nbsp;&nbsp;<a
 href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L23"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/master/src/strlib.nim#L23" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L23" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="kebabCase,string"></a>
@@ -923,7 +931,7 @@ Converts <tt class="docutils literal"><span class="pre">snake_case</span></tt> s
 &nbsp;&nbsp;<a
 href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L36"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/master/src/strlib.nim#L36" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L36" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="lowerCase,string"></a>
@@ -934,7 +942,7 @@ Converts <tt class="docutils literal"><span class="pre">snake_case</span></tt> s
 &nbsp;&nbsp;<a
 href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L40"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/master/src/strlib.nim#L40" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L40" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="pascalCase,string,HashSet[string]"></a>
@@ -946,7 +954,7 @@ Converts <tt class="docutils literal"><span class="pre">snake_case</span></tt> s
 &nbsp;&nbsp;<a
 href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L44"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/master/src/strlib.nim#L44" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L44" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="upperCase,string"></a>
@@ -957,7 +965,19 @@ Converts <tt class="docutils literal"><span class="pre">snake_case</span></tt> s
 &nbsp;&nbsp;<a
 href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L48"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/master/src/strlib.nim#L48" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L48" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<a id="format,Case,string,HashSet[string]"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#format%2CCase%2Cstring%2CHashSet%5Bstring%5D"><span class="Identifier">format</span></a><span class="Other">(</span><span class="Identifier">c</span><span class="Other">:</span> <a href="strlib.html#Case"><span class="Identifier">Case</span></a><span class="Other">;</span> <span class="Identifier">variable</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">acronyms</span><span class="Other">:</span> <span class="Identifier">HashSet</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">acronyms</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L52"
+class="link-seesrc" target="_blank">Source</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L52" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="allCases,string,HashSet[string]"></a>
@@ -967,9 +987,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 Get a <tt class="docutils literal"><span class="pre">Table[Case, string]</span></tt> of all the difference cases from <tt class="docutils literal"><span class="pre">variable</span></tt>.
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L52"
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L67"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/master/src/strlib.nim#L52" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L67" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="count,string,HashSet[char]"></a>
@@ -979,9 +999,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 Similar to <tt class="docutils literal"><span class="pre">count</span></tt> in <tt class="docutils literal"><span class="pre">strutil</span></tt> <a class="reference external" href="https://nim-lang.org/docs/strutils.html#count%2Cstring%2Cset%5Bchar%5D">here</a> but it returns the count of each <tt class="docutils literal"><span class="pre">char</span></tt> in <tt class="docutils literal"><span class="pre">chars</span></tt> individually in a table.
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L63"
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L78"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/master/src/strlib.nim#L63" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L78" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="parseInt,char"></a>
@@ -990,9 +1010,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L76"
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L91"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/master/src/strlib.nim#L76" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L91" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="replace,seq[T][char],Table[string,string]"></a>
@@ -1002,9 +1022,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 Similar to <tt class="docutils literal"><span class="pre">multiReplace</span></tt> in <tt class="docutils literal"><span class="pre">strutil</span></tt> <a class="reference external" href="https://nim-lang.org/docs/strutils.html#multiReplace%2Cstring%2Cvarargs%5B%5D">here</a> but it takes in <tt class="docutils literal"><span class="pre">Table[string, string]</span></tt> instead of <tt class="docutils literal"><span class="pre">varargs[tuple(string, string)]</span></tt>.
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L81"
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L96"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/master/src/strlib.nim#L81" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L96" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="seqCharToString,seq[T][char]"></a>
@@ -1013,9 +1033,20 @@ class="link-seesrc" target="_blank">Source</a>
 
 Converts a <tt class="docutils literal"><span class="pre">seq[char]</span></tt> to <tt class="docutils literal"><span class="pre">string</span></tt>
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L109"
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L124"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/master/src/strlib.nim#L109" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L124" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<a id="width,seq[T][string]"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#width%2Cseq%5BT%5D%5Bstring%5D"><span class="Identifier">width</span></a><span class="Other">(</span><span class="Identifier">strs</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L130"
+class="link-seesrc" target="_blank">Source</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L130" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="maxWidth,seq[T][string]"></a>
@@ -1024,9 +1055,40 @@ class="link-seesrc" target="_blank">Source</a>
 
 Get longest width string for each column of the field (separated by space).
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L115"
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L136"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/master/src/strlib.nim#L115" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L136" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<a id="find,string,char,char,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#find%2Cstring%2Cchar%2Cchar%2Cstring"><span class="Identifier">find</span></a><span class="Other">(</span><span class="Identifier">str</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">open</span><span class="Other">:</span> <span class="Identifier">char</span><span class="Other">;</span> <span class="Identifier">close</span><span class="Other">:</span> <span class="Identifier">char</span><span class="Other">;</span> <span class="Identifier">toFind</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+Find location of <tt class="docutils literal"><span class="pre">toFind</span></tt> in <tt class="docutils literal"><span class="pre">str</span></tt> when the <tt class="docutils literal"><span class="pre">open</span></tt> and <tt class="docutils literal"><span class="pre">close</span></tt> character count is the same
+<p><strong class="examples_text">Examples:</strong></p>
+<pre class="listing"><span class="Identifier">doAssert</span> <span class="Identifier">find</span><span class="Other">(</span><span class="StringLit">&quot;&lt;A,B&gt;,B&quot;</span><span class="Other">,</span> <span class="CharLit">'&lt;'</span><span class="Other">,</span> <span class="CharLit">'&gt;'</span><span class="Other">,</span> <span class="StringLit">&quot;,&quot;</span><span class="Other">)</span> <span class="Operator">==</span> <span class="Operator">@</span><span class="Other">[</span><span class="DecNumber">5</span><span class="Other">]</span>
+<span class="Identifier">doAssert</span> <span class="Identifier">find</span><span class="Other">(</span><span class="StringLit">&quot;A,&lt;B,C&gt;&quot;</span><span class="Other">,</span> <span class="CharLit">'&lt;'</span><span class="Other">,</span> <span class="CharLit">'&gt;'</span><span class="Other">,</span> <span class="StringLit">&quot;,&quot;</span><span class="Other">)</span> <span class="Operator">==</span> <span class="Operator">@</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span></pre>
+&nbsp;&nbsp;<a
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L148"
+class="link-seesrc" target="_blank">Source</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L148" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<a id="split,string,char,char,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#split%2Cstring%2Cchar%2Cchar%2Cstring"><span class="Identifier">split</span></a><span class="Other">(</span><span class="Identifier">str</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">open</span><span class="Other">:</span> <span class="Identifier">char</span><span class="Other">;</span> <span class="Identifier">close</span><span class="Other">:</span> <span class="Identifier">char</span><span class="Other">;</span> <span class="Identifier">separator</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+Split string into a sequence of string based on the given info from <a class="reference external" href="#find,string,string,char,char,string">find</a> .
+<p><strong class="examples_text">Examples:</strong></p>
+<pre class="listing"><span class="Identifier">doAssert</span> <span class="Identifier">split</span><span class="Other">(</span><span class="StringLit">&quot;&lt;A,B&gt;,B&quot;</span><span class="Other">,</span> <span class="CharLit">'&lt;'</span><span class="Other">,</span> <span class="CharLit">'&gt;'</span><span class="Other">,</span> <span class="StringLit">&quot;,&quot;</span><span class="Other">)</span> <span class="Operator">==</span> <span class="Operator">@</span><span class="Other">[</span><span class="StringLit">&quot;&lt;A,B&gt;&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;B&quot;</span><span class="Other">]</span>
+<span class="Identifier">doAssert</span> <span class="Identifier">split</span><span class="Other">(</span><span class="StringLit">&quot;&lt;A, &lt;B, C&gt;&gt;, &lt;A, &lt;B, C&gt;&gt;, &lt;X, Y&gt;&quot;</span><span class="Other">,</span> <span class="CharLit">'&lt;'</span><span class="Other">,</span> <span class="CharLit">'&gt;'</span><span class="Other">,</span> <span class="StringLit">&quot;, &quot;</span><span class="Other">)</span> <span class="Operator">==</span>
+    <span class="Operator">@</span><span class="Other">[</span><span class="StringLit">&quot;&lt;A, &lt;B, C&gt;&gt;&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;&lt;A, &lt;B, C&gt;&gt;&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;&lt;X, Y&gt;&quot;</span><span class="Other">]</span></pre>
+&nbsp;&nbsp;<a
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L171"
+class="link-seesrc" target="_blank">Source</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L171" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -1039,7 +1101,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-12-12 05:06:45 UTC</small>
+        <small>Made with Nim. Generated: 2019-12-31 20:34:15 UTC</small>
       </div>
     </div>
   </div>

@@ -12,9 +12,13 @@ kebabCase	strlib.html#kebabCase,string	strlib: kebabCase(variable: string): stri
 lowerCase	strlib.html#lowerCase,string	strlib: lowerCase(variable: string): string	
 pascalCase	strlib.html#pascalCase,string,HashSet[string]	strlib: pascalCase(variable: string; acronyms: HashSet[string] = acronyms): string	
 upperCase	strlib.html#upperCase,string	strlib: upperCase(variable: string): string	
+format	strlib.html#format,Case,string,HashSet[string]	strlib: format(c: Case; variable: string; acronyms: HashSet[string] = acronyms): string	
 allCases	strlib.html#allCases,string,HashSet[string]	strlib: allCases(variable: string; acronyms: HashSet[string] = acronyms): Table[Case, string]	
 count	strlib.html#count,string,HashSet[char]	strlib: count(word: string; chars: HashSet[char]): Table[char, int]	
 parseInt	strlib.html#parseInt,char	strlib: parseInt(number: char): int	
 replace	strlib.html#replace,seq[T][char],Table[string,string]	strlib: replace(input: var seq[char]; replacements: Table[string, string]): seq[char]	
 seqCharToString	strlib.html#seqCharToString,seq[T][char]	strlib: seqCharToString(input: seq[char]): string	
+width	strlib.html#width,seq[T][string]	strlib: width(strs: seq[string]): seq[int]	
 maxWidth	strlib.html#maxWidth,seq[T][string]	strlib: maxWidth(fields: seq[string]): seq[int]	
+find	strlib.html#find,string,char,char,string	strlib: find(str: string; open: char; close: char; toFind: string): seq[int]	
+split	strlib.html#split,string,char,char,string	strlib: split(str: string; open: char; close: char; separator: string): seq[string]	
