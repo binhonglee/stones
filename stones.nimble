@@ -7,7 +7,7 @@ license       = "MIT"
 bin           = @["genlib", "log", "strlib"]
 binDir        = "bin"
 srcDir        = "src"
-skipDirs      = @["tests"]
+skipDirs      = @["test"]
 
 requires "nim >= 1.0.0"
 

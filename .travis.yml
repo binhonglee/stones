@@ -1,0 +1,34 @@
+os:
+  - linux
+  - osx
+
+language: c
+
+cache:
+  directories:
+    - "$HOME/.nimble/bin"
+    - "$HOME/.choosenim"
+
+install:
+  - export CHOOSENIM_NO_ANALYTICS=1
+  - export PATH=$HOME/.nimble/bin:$PATH
+  - |
+    if ! type -P choosenim &> /dev/null; then
+      export CHOOSENIM_CHOOSE_VERSION=$BRANCH
+      curl https://nim-lang.org/choosenim/init.sh -sSf > init.sh
+      sh init.sh -y
+    fi
+
+script:
+  - nimble -y build
+  - nimble test
+  - nimble docs
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  token: $GITHUB_TOKEN
+  target_branch: gh-pages
+  local_dir: docs
+  on:
+    branch: master
