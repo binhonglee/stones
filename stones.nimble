@@ -7,6 +7,12 @@ license       = "MIT"
 bin           = @["genlib", "log", "strlib"]
 binDir        = "bin"
 srcDir        = "src"
-installDirs   = @["src"]
+skipDirs      = @["tests"]
 
 requires "nim >= 1.0.0"
+
+task docs, "Build docs":
+  exec "./scripts/docs.nims"
+
+task test, "Runs the test suite":
+  exec "./scripts/test.nims"
