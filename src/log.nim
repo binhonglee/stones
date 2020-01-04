@@ -1,4 +1,3 @@
-from strutils import indent
 from terminal import ansiForegroundColorCode, ForegroundColor
 
 type
@@ -50,7 +49,7 @@ proc prefix(level: AlertLevel): string =
 proc LOG*(level: AlertLevel, message: string, exception: typedesc = GenericError): void =
   ## Log message (and throw error if `level` is `FATAL`).
   if LEVEL >= level:
-    echo indent(message, 1, prefix(level) & ": ")
+    echo prefix(level) & ": " & message
   if level == FATAL:
     raise newException(exception, message)
 

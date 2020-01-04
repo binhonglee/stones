@@ -805,30 +805,38 @@ function main() {
 <div class="document" id="documentId">
   <div class="container">
     <h1 class="title">Index</h1>
-    Modules: <a href="genlib.html">genlib</a>, <a href="log.html">log</a>, <a href="strlib.html">strlib</a>.<br/><p /><h2>API symbols</h2>
+    Modules: <a href="cases.html">cases</a>, <a href="genlib.html">genlib</a>, <a href="log.html">log</a>, <a href="strlib.html">strlib</a>.<br/><p /><h2>API symbols</h2>
 <dl><dt><a name="AlertLevel" href="#AlertLevel"><span>AlertLevel:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="log: AlertLevel" href="log.html#AlertLevel">log: AlertLevel</a></li>
           </ul></dd>
 <dt><a name="allCases" href="#allCases"><span>allCases:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="strlib: allCases(variable: string; acronyms: HashSet[string] = acronyms): Table[Case, string]" href="strlib.html#allCases%2Cstring%2CHashSet%5Bstring%5D">strlib: allCases(variable: string; acronyms: HashSet[string] = acronyms): Table[Case, string]</a></li>
+          data-doc-search-tag="cases: allCases(s: string; acronyms: HashSet[string] = acronyms): Table[Case, string]" href="cases.html#allCases%2Cstring%2CHashSet%5Bstring%5D">cases: allCases(s: string; acronyms: HashSet[string] = acronyms): Table[Case, string]</a></li>
           </ul></dd>
 <dt><a name="Camel" href="#Camel"><span>Camel:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="Case.Camel" href="strlib.html#Camel">Case.Camel</a></li>
+          data-doc-search-tag="Case.Camel" href="cases.html#Camel">Case.Camel</a></li>
           </ul></dd>
 <dt><a name="camelCase" href="#camelCase"><span>camelCase:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="strlib: camelCase(variable: string; acronyms: HashSet[string] = acronyms): string" href="strlib.html#camelCase%2Cstring%2CHashSet%5Bstring%5D">strlib: camelCase(variable: string; acronyms: HashSet[string] = acronyms): string</a></li>
+          data-doc-search-tag="cases: camelCase(s: string; acronyms: HashSet[string] = acronyms): string" href="cases.html#camelCase%2Cstring%2CHashSet%5Bstring%5D">cases: camelCase(s: string; acronyms: HashSet[string] = acronyms): string</a></li>
           </ul></dd>
 <dt><a name="Case" href="#Case"><span>Case:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="strlib: Case" href="strlib.html#Case">strlib: Case</a></li>
+          data-doc-search-tag="cases: Case" href="cases.html#Case">cases: Case</a></li>
+          </ul></dd>
+<dt><a name="ConflictingValueError" href="#ConflictingValueError"><span>ConflictingValueError:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="genlib: ConflictingValueError" href="genlib.html#ConflictingValueError">genlib: ConflictingValueError</a></li>
           </ul></dd>
 <dt><a name="count" href="#count"><span>count:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="strlib: count(word: string; chars: HashSet[char]): Table[char, int]" href="strlib.html#count%2Cstring%2CHashSet%5Bchar%5D">strlib: count(word: string; chars: HashSet[char]): Table[char, int]</a></li>
+          </ul></dd>
+<dt><a name="currentCase" href="#currentCase"><span>currentCase:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="cases: currentCase(s: string): Case" href="cases.html#currentCase%2Cstring">cases: currentCase(s: string): Case</a></li>
           </ul></dd>
 <dt><a name="DEBUG" href="#DEBUG"><span>DEBUG:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -836,11 +844,15 @@ function main() {
           </ul></dd>
 <dt><a name="Default" href="#Default"><span>Default:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="Case.Default" href="strlib.html#Default">Case.Default</a></li>
+          data-doc-search-tag="Case.Default" href="cases.html#Default">Case.Default</a></li>
           </ul></dd>
 <dt><a name="DEPRECATED" href="#DEPRECATED"><span>DEPRECATED:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="AlertLevel.DEPRECATED" href="log.html#DEPRECATED">AlertLevel.DEPRECATED</a></li>
+          </ul></dd>
+<dt><a name="DuplicateKeyError" href="#DuplicateKeyError"><span>DuplicateKeyError:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="genlib: DuplicateKeyError" href="genlib.html#DuplicateKeyError">genlib: DuplicateKeyError</a></li>
           </ul></dd>
 <dt><a name="ERROR" href="#ERROR"><span>ERROR:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -856,7 +868,23 @@ function main() {
           </ul></dd>
 <dt><a name="format" href="#format"><span>format:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="strlib: format(c: Case; variable: string; acronyms: HashSet[string] = acronyms): string" href="strlib.html#format%2CCase%2Cstring%2CHashSet%5Bstring%5D">strlib: format(c: Case; variable: string; acronyms: HashSet[string] = acronyms): string</a></li>
+          data-doc-search-tag="cases: format(c: Case; s: string; acronyms: HashSet[string] = acronyms): string" href="cases.html#format%2CCase%2Cstring%2CHashSet%5Bstring%5D">cases: format(c: Case; s: string; acronyms: HashSet[string] = acronyms): string</a></li>
+          </ul></dd>
+<dt><a name="fromCamelCase" href="#fromCamelCase"><span>fromCamelCase:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="cases: fromCamelCase(s: string; acronyms: HashSet[string] = acronyms): string" href="cases.html#fromCamelCase%2Cstring%2CHashSet%5Bstring%5D">cases: fromCamelCase(s: string; acronyms: HashSet[string] = acronyms): string</a></li>
+          </ul></dd>
+<dt><a name="fromKebabCase" href="#fromKebabCase"><span>fromKebabCase:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="cases: fromKebabCase(s: string): string" href="cases.html#fromKebabCase%2Cstring">cases: fromKebabCase(s: string): string</a></li>
+          </ul></dd>
+<dt><a name="fromPascalCase" href="#fromPascalCase"><span>fromPascalCase:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="cases: fromPascalCase(s: string; acronyms: HashSet[string] = acronyms): string" href="cases.html#fromPascalCase%2Cstring%2CHashSet%5Bstring%5D">cases: fromPascalCase(s: string; acronyms: HashSet[string] = acronyms): string</a></li>
+          </ul></dd>
+<dt><a name="fromUpperCase" href="#fromUpperCase"><span>fromUpperCase:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="cases: fromUpperCase(s: string): string" href="cases.html#fromUpperCase%2Cstring">cases: fromUpperCase(s: string): string</a></li>
           </ul></dd>
 <dt><a name="GenericError" href="#GenericError"><span>GenericError:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -865,6 +893,8 @@ function main() {
 <dt><a name="getResult" href="#getResult"><span>getResult:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="genlib: getResult[A, B](input: A; arg: B; p: proc (x: var A; y: B)): A" href="genlib.html#getResult%2CA%2CB%2Cproc%28A%2CB%29">genlib: getResult[A, B](input: A; arg: B; p: proc (x: var A; y: B)): A</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="genlib: getResult[A, B](input: A; p: proc (x: var A; y: varargs[B]); args: varargs[B]): A" href="genlib.html#getResult%2CA%2Cproc%28A%2Cvarargs%5BB%5D%29%2Cvarargs%5BB%5D">genlib: getResult[A, B](input: A; p: proc (x: var A; y: varargs[B]); args: varargs[B]): A</a></li>
           <li><a class="reference external"
           data-doc-search-tag="genlib: getResult[T](input: T; p: proc (x: var T)): T" href="genlib.html#getResult%2CT%2Cproc%28T%29">genlib: getResult[T](input: T; p: proc (x: var T)): T</a></li>
           <li><a class="reference external"
@@ -876,13 +906,17 @@ function main() {
 <li><a class="reference external"
           data-doc-search-tag="AlertLevel.INFO" href="log.html#INFO">AlertLevel.INFO</a></li>
           </ul></dd>
+<dt><a name="InvalidIndexError" href="#InvalidIndexError"><span>InvalidIndexError:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="strlib: InvalidIndexError" href="strlib.html#InvalidIndexError">strlib: InvalidIndexError</a></li>
+          </ul></dd>
 <dt><a name="Kebab" href="#Kebab"><span>Kebab:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="Case.Kebab" href="strlib.html#Kebab">Case.Kebab</a></li>
+          data-doc-search-tag="Case.Kebab" href="cases.html#Kebab">Case.Kebab</a></li>
           </ul></dd>
 <dt><a name="kebabCase" href="#kebabCase"><span>kebabCase:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="strlib: kebabCase(variable: string): string" href="strlib.html#kebabCase%2Cstring">strlib: kebabCase(variable: string): string</a></li>
+          data-doc-search-tag="cases: kebabCase(s: string): string" href="cases.html#kebabCase%2Cstring">cases: kebabCase(s: string): string</a></li>
           </ul></dd>
 <dt><a name="LOG" href="#LOG"><span>LOG:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -890,15 +924,11 @@ function main() {
           </ul></dd>
 <dt><a name="Lower" href="#Lower"><span>Lower:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="Case.Lower" href="strlib.html#Lower">Case.Lower</a></li>
+          data-doc-search-tag="Case.Lower" href="cases.html#Lower">Case.Lower</a></li>
           </ul></dd>
 <dt><a name="lowerCase" href="#lowerCase"><span>lowerCase:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="strlib: lowerCase(variable: string): string" href="strlib.html#lowerCase%2Cstring">strlib: lowerCase(variable: string): string</a></li>
-          </ul></dd>
-<dt><a name="maxWidth" href="#maxWidth"><span>maxWidth:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external"
-          data-doc-search-tag="strlib: maxWidth(fields: seq[string]): seq[int]" href="strlib.html#maxWidth%2Cseq%5BT%5D%5Bstring%5D">strlib: maxWidth(fields: seq[string]): seq[int]</a></li>
+          data-doc-search-tag="cases: lowerCase(s: string): string" href="cases.html#lowerCase%2Cstring">cases: lowerCase(s: string): string</a></li>
           </ul></dd>
 <dt><a name="merge" href="#merge"><span>merge:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -906,21 +936,29 @@ function main() {
           <li><a class="reference external"
           data-doc-search-tag="genlib: merge[A, B](first: var Table[A, B]; second: Table[A, B]; ignoreDup: bool = true): void" href="genlib.html#merge%2CTable%5BA%2CB%5D%2CTable%5BA%2CB%5D%2Cbool">genlib: merge[A, B](first: var Table[A, B]; second: Table[A, B]; ignoreDup: bool = true): void</a></li>
           </ul></dd>
+<dt><a name="NotADigitError" href="#NotADigitError"><span>NotADigitError:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="strlib: NotADigitError" href="strlib.html#NotADigitError">strlib: NotADigitError</a></li>
+          </ul></dd>
 <dt><a name="parseInt" href="#parseInt"><span>parseInt:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="strlib: parseInt(number: char): int" href="strlib.html#parseInt%2Cchar">strlib: parseInt(number: char): int</a></li>
+          data-doc-search-tag="strlib: parseInt(num: char): int" href="strlib.html#parseInt%2Cchar">strlib: parseInt(num: char): int</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="strlib: parseInt(num: string): int" href="strlib.html#parseInt%2Cstring">strlib: parseInt(num: string): int</a></li>
           </ul></dd>
 <dt><a name="Pascal" href="#Pascal"><span>Pascal:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="Case.Pascal" href="strlib.html#Pascal">Case.Pascal</a></li>
+          data-doc-search-tag="Case.Pascal" href="cases.html#Pascal">Case.Pascal</a></li>
           </ul></dd>
 <dt><a name="pascalCase" href="#pascalCase"><span>pascalCase:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="strlib: pascalCase(variable: string; acronyms: HashSet[string] = acronyms): string" href="strlib.html#pascalCase%2Cstring%2CHashSet%5Bstring%5D">strlib: pascalCase(variable: string; acronyms: HashSet[string] = acronyms): string</a></li>
+          data-doc-search-tag="cases: pascalCase(s: string; acronyms: HashSet[string] = acronyms): string" href="cases.html#pascalCase%2Cstring%2CHashSet%5Bstring%5D">cases: pascalCase(s: string; acronyms: HashSet[string] = acronyms): string</a></li>
           </ul></dd>
 <dt><a name="replace" href="#replace"><span>replace:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="strlib: replace(input: var seq[char]; replacements: Table[string, string]): seq[char]" href="strlib.html#replace%2Cseq%5BT%5D%5Bchar%5D%2CTable%5Bstring%2Cstring%5D">strlib: replace(input: var seq[char]; replacements: Table[string, string]): seq[char]</a></li>
+          data-doc-search-tag="strlib: replace(input: var seq[char]; replacements: Table[string, string]): void" href="strlib.html#replace%2Cseq%5BT%5D%5Bchar%5D%2CTable%5Bstring%2Cstring%5D">strlib: replace(input: var seq[char]; replacements: Table[string, string]): void</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="strlib: replace(s: string; replacements: Table[string, string]): string" href="strlib.html#replace%2Cstring%2CTable%5Bstring%2Cstring%5D">strlib: replace(s: string; replacements: Table[string, string]): string</a></li>
           </ul></dd>
 <dt><a name="seqCharToString" href="#seqCharToString"><span>seqCharToString:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -928,7 +966,7 @@ function main() {
           </ul></dd>
 <dt><a name="setAcronyms" href="#setAcronyms"><span>setAcronyms:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="strlib: setAcronyms(configAcronyms: HashSet[string]): void" href="strlib.html#setAcronyms%2CHashSet%5Bstring%5D">strlib: setAcronyms(configAcronyms: HashSet[string]): void</a></li>
+          data-doc-search-tag="cases: setAcronyms(configAcronyms: HashSet[string]): void" href="cases.html#setAcronyms%2CHashSet%5Bstring%5D">cases: setAcronyms(configAcronyms: HashSet[string]): void</a></li>
           </ul></dd>
 <dt><a name="setLevel" href="#setLevel"><span>setLevel:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -936,23 +974,55 @@ function main() {
           </ul></dd>
 <dt><a name="Snake" href="#Snake"><span>Snake:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="Case.Snake" href="strlib.html#Snake">Case.Snake</a></li>
+          data-doc-search-tag="Case.Snake" href="cases.html#Snake">Case.Snake</a></li>
           </ul></dd>
 <dt><a name="split" href="#split"><span>split:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="strlib: split(str: string; open: char; close: char; separator: string): seq[string]" href="strlib.html#split%2Cstring%2Cchar%2Cchar%2Cstring">strlib: split(str: string; open: char; close: char; separator: string): seq[string]</a></li>
           </ul></dd>
+<dt><a name="substr" href="#substr"><span>substr:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="strlib: substr(s: var string; first, last: int): void" href="strlib.html#substr%2Cstring%2Cint%2Cint">strlib: substr(s: var string; first, last: int): void</a></li>
+          </ul></dd>
 <dt><a name="SUCCESS" href="#SUCCESS"><span>SUCCESS:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="AlertLevel.SUCCESS" href="log.html#SUCCESS">AlertLevel.SUCCESS</a></li>
           </ul></dd>
+<dt><a name="toCamelCase" href="#toCamelCase"><span>toCamelCase:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="cases: toCamelCase(s: string; acronyms: HashSet[string] = acronyms): string" href="cases.html#toCamelCase%2Cstring%2CHashSet%5Bstring%5D">cases: toCamelCase(s: string; acronyms: HashSet[string] = acronyms): string</a></li>
+          </ul></dd>
+<dt><a name="toKebabCase" href="#toKebabCase"><span>toKebabCase:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="cases: toKebabCase(s: string): string" href="cases.html#toKebabCase%2Cstring">cases: toKebabCase(s: string): string</a></li>
+          </ul></dd>
+<dt><a name="toLowerCase" href="#toLowerCase"><span>toLowerCase:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="cases: toLowerCase(s: string): string" href="cases.html#toLowerCase%2Cstring">cases: toLowerCase(s: string): string</a></li>
+          </ul></dd>
+<dt><a name="toPascalCase" href="#toPascalCase"><span>toPascalCase:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="cases: toPascalCase(s: string; acronyms: HashSet[string] = acronyms): string" href="cases.html#toPascalCase%2Cstring%2CHashSet%5Bstring%5D">cases: toPascalCase(s: string; acronyms: HashSet[string] = acronyms): string</a></li>
+          </ul></dd>
+<dt><a name="toUpperCase" href="#toUpperCase"><span>toUpperCase:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="cases: toUpperCase(s: string): string" href="cases.html#toUpperCase%2Cstring">cases: toUpperCase(s: string): string</a></li>
+          </ul></dd>
+<dt><a name="trim" href="#trim"><span>trim:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="strlib: trim(s: var string): void" href="strlib.html#trim%2Cstring">strlib: trim(s: var string): void</a></li>
+          </ul></dd>
+<dt><a name="UnsupportedCharacterError" href="#UnsupportedCharacterError"><span>UnsupportedCharacterError:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="cases: UnsupportedCharacterError" href="cases.html#UnsupportedCharacterError">cases: UnsupportedCharacterError</a></li>
+          </ul></dd>
 <dt><a name="Upper" href="#Upper"><span>Upper:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="Case.Upper" href="strlib.html#Upper">Case.Upper</a></li>
+          data-doc-search-tag="Case.Upper" href="cases.html#Upper">Case.Upper</a></li>
           </ul></dd>
 <dt><a name="upperCase" href="#upperCase"><span>upperCase:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="strlib: upperCase(variable: string): string" href="strlib.html#upperCase%2Cstring">strlib: upperCase(variable: string): string</a></li>
+          data-doc-search-tag="cases: upperCase(s: string): string" href="cases.html#upperCase%2Cstring">cases: upperCase(s: string): string</a></li>
           </ul></dd>
 <dt><a name="WARNING" href="#WARNING"><span>WARNING:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -967,7 +1037,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-12-31 20:34:15 UTC</small>
+        <small>Made with Nim. Generated: 2020-01-04 20:46:22 UTC</small>
       </div>
     </div>
   </div>

@@ -826,44 +826,34 @@ function main() {
 <li>
   <a class="reference reference-toplevel" href="#7" id="57">Types</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#Case"
-    title="Case = enum
-  Default = &quot;DEFAULT&quot;, Camel = &quot;CAMEL&quot;, Kebab = &quot;KEBAB&quot;, Lower = &quot;LOWER&quot;, Pascal = &quot;PASCAL&quot;,
-  Snake = &quot;SNAKE&quot;, Upper = &quot;UPPER&quot;"><wbr />Case<span class="attachedType"></span></a></li>
+      <li><a class="reference" href="#InvalidIndexError"
+    title="InvalidIndexError = object of Exception"><wbr />Invalid<wbr />Index<wbr />Error<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#NotADigitError"
+    title="NotADigitError = object of Exception"><wbr />Not<wbr />ADigit<wbr />Error<span class="attachedType"></span></a></li>
 
   </ul>
 </li>
 <li>
   <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#setAcronyms%2CHashSet%5Bstring%5D"
-    title="setAcronyms(configAcronyms: HashSet[string]): void"><wbr />set<wbr />Acronyms<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#camelCase%2Cstring%2CHashSet%5Bstring%5D"
-    title="camelCase(variable: string; acronyms: HashSet[string] = acronyms): string"><wbr />camel<wbr />Case<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#kebabCase%2Cstring"
-    title="kebabCase(variable: string): string"><wbr />kebab<wbr />Case<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#lowerCase%2Cstring"
-    title="lowerCase(variable: string): string"><wbr />lower<wbr />Case<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#pascalCase%2Cstring%2CHashSet%5Bstring%5D"
-    title="pascalCase(variable: string; acronyms: HashSet[string] = acronyms): string"><wbr />pascal<wbr />Case<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#upperCase%2Cstring"
-    title="upperCase(variable: string): string"><wbr />upper<wbr />Case<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#format%2CCase%2Cstring%2CHashSet%5Bstring%5D"
-    title="format(c: Case; variable: string; acronyms: HashSet[string] = acronyms): string"><wbr />format<span class="attachedType">Case</span></a></li>
-  <li><a class="reference" href="#allCases%2Cstring%2CHashSet%5Bstring%5D"
-    title="allCases(variable: string; acronyms: HashSet[string] = acronyms): Table[Case, string]"><wbr />all<wbr />Cases<span class="attachedType">Case</span></a></li>
-  <li><a class="reference" href="#count%2Cstring%2CHashSet%5Bchar%5D"
+      <li><a class="reference" href="#count%2Cstring%2CHashSet%5Bchar%5D"
     title="count(word: string; chars: HashSet[char]): Table[char, int]"><wbr />count<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#parseInt%2Cchar"
-    title="parseInt(number: char): int"><wbr />parse<wbr />Int<span class="attachedType"></span></a></li>
+    title="parseInt(num: char): int"><wbr />parse<wbr />Int<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#parseInt%2Cstring"
+    title="parseInt(num: string): int"><wbr />parse<wbr />Int<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#substr%2Cstring%2Cint%2Cint"
+    title="substr(s: var string; first, last: int): void"><wbr />substr<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#trim%2Cstring"
+    title="trim(s: var string): void"><wbr />trim<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#replace%2Cseq%5BT%5D%5Bchar%5D%2CTable%5Bstring%2Cstring%5D"
-    title="replace(input: var seq[char]; replacements: Table[string, string]): seq[char]"><wbr />replace<span class="attachedType"></span></a></li>
+    title="replace(input: var seq[char]; replacements: Table[string, string]): void"><wbr />replace<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#replace%2Cstring%2CTable%5Bstring%2Cstring%5D"
+    title="replace(s: string; replacements: Table[string, string]): string"><wbr />replace<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#seqCharToString%2Cseq%5BT%5D%5Bchar%5D"
     title="seqCharToString(input: seq[char]): string"><wbr />seq<wbr />Char<wbr />To<wbr />String<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#width%2Cseq%5BT%5D%5Bstring%5D"
     title="width(strs: seq[string]): seq[int]"><wbr />width<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#maxWidth%2Cseq%5BT%5D%5Bstring%5D"
-    title="maxWidth(fields: seq[string]): seq[int]"><wbr />max<wbr />Width<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#find%2Cstring%2Cchar%2Cchar%2Cstring"
     title="find(str: string; open: char; close: char; toFind: string): seq[int]"><wbr />find<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#split%2Cstring%2Cchar%2Cchar%2Cstring"
@@ -882,17 +872,26 @@ function main() {
   <div class="section" id="7">
 <h1><a class="toc-backref" href="#7">Types</a></h1>
 <dl class="item">
-<a id="Case"></a>
-<dt><pre><a href="strlib.html#Case"><span class="Identifier">Case</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
-  <span class="Identifier">Default</span> <span class="Other">=</span> <span class="StringLit">&quot;DEFAULT&quot;</span><span class="Other">,</span> <span class="Identifier">Camel</span> <span class="Other">=</span> <span class="StringLit">&quot;CAMEL&quot;</span><span class="Other">,</span> <span class="Identifier">Kebab</span> <span class="Other">=</span> <span class="StringLit">&quot;KEBAB&quot;</span><span class="Other">,</span> <span class="Identifier">Lower</span> <span class="Other">=</span> <span class="StringLit">&quot;LOWER&quot;</span><span class="Other">,</span> <span class="Identifier">Pascal</span> <span class="Other">=</span> <span class="StringLit">&quot;PASCAL&quot;</span><span class="Other">,</span>
-  <span class="Identifier">Snake</span> <span class="Other">=</span> <span class="StringLit">&quot;SNAKE&quot;</span><span class="Other">,</span> <span class="Identifier">Upper</span> <span class="Other">=</span> <span class="StringLit">&quot;UPPER&quot;</span></pre></dt>
+<a id="InvalidIndexError"></a>
+<dt><pre><a href="strlib.html#InvalidIndexError"><span class="Identifier">InvalidIndexError</span></a> <span class="Other">=</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">Exception</span></pre></dt>
 <dd>
 
-Supported case types.
+
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L9"
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L8"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L9" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L8" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<a id="NotADigitError"></a>
+<dt><pre><a href="strlib.html#NotADigitError"><span class="Identifier">NotADigitError</span></a> <span class="Other">=</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">Exception</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L11"
+class="link-seesrc" target="_blank">Source</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L11" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -900,98 +899,6 @@ class="link-seesrc" target="_blank">Source</a>
 <div class="section" id="12">
 <h1><a class="toc-backref" href="#12">Procs</a></h1>
 <dl class="item">
-<a id="setAcronyms,HashSet[string]"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#setAcronyms%2CHashSet%5Bstring%5D"><span class="Identifier">setAcronyms</span></a><span class="Other">(</span><span class="Identifier">configAcronyms</span><span class="Other">:</span> <span class="Identifier">HashSet</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
-<dd>
-
-Setter for acronyms to always apply ALLCAPS.
-&nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L19"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L19" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-<a id="camelCase,string,HashSet[string]"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#camelCase%2Cstring%2CHashSet%5Bstring%5D"><span class="Identifier">camelCase</span></a><span class="Other">(</span><span class="Identifier">variable</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">acronyms</span><span class="Other">:</span> <span class="Identifier">HashSet</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">acronyms</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
-<dd>
-
-Converts <tt class="docutils literal"><span class="pre">snake_case</span></tt> string to <tt class="docutils literal"><span class="pre">camelCase</span></tt>.
-&nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L23"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L23" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-<a id="kebabCase,string"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#kebabCase%2Cstring"><span class="Identifier">kebabCase</span></a><span class="Other">(</span><span class="Identifier">variable</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
-<dd>
-
-Converts <tt class="docutils literal"><span class="pre">snake_case</span></tt> string to <tt class="docutils literal"><span class="pre">kebab-case</span></tt>.
-&nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L36"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L36" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-<a id="lowerCase,string"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#lowerCase%2Cstring"><span class="Identifier">lowerCase</span></a><span class="Other">(</span><span class="Identifier">variable</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
-<dd>
-
-Converts <tt class="docutils literal"><span class="pre">snake_case</span></tt> string to <tt class="docutils literal"><span class="pre">lowercase</span></tt>.
-&nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L40"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L40" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-<a id="pascalCase,string,HashSet[string]"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#pascalCase%2Cstring%2CHashSet%5Bstring%5D"><span class="Identifier">pascalCase</span></a><span class="Other">(</span><span class="Identifier">variable</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">acronyms</span><span class="Other">:</span> <span class="Identifier">HashSet</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">acronyms</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
-<dd>
-
-Converts <tt class="docutils literal"><span class="pre">snake_case</span></tt> string to <tt class="docutils literal"><span class="pre">PascalCase</span></tt>.
-&nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L44"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L44" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-<a id="upperCase,string"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#upperCase%2Cstring"><span class="Identifier">upperCase</span></a><span class="Other">(</span><span class="Identifier">variable</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
-<dd>
-
-Converts <tt class="docutils literal"><span class="pre">snake_case</span></tt> string to <tt class="docutils literal"><span class="pre">UPPER_CASE</span></tt>.
-&nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L48"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L48" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-<a id="format,Case,string,HashSet[string]"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#format%2CCase%2Cstring%2CHashSet%5Bstring%5D"><span class="Identifier">format</span></a><span class="Other">(</span><span class="Identifier">c</span><span class="Other">:</span> <a href="strlib.html#Case"><span class="Identifier">Case</span></a><span class="Other">;</span> <span class="Identifier">variable</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">acronyms</span><span class="Other">:</span> <span class="Identifier">HashSet</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">acronyms</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L52"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L52" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-<a id="allCases,string,HashSet[string]"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#allCases%2Cstring%2CHashSet%5Bstring%5D"><span class="Identifier">allCases</span></a><span class="Other">(</span><span class="Identifier">variable</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">acronyms</span><span class="Other">:</span> <span class="Identifier">HashSet</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">acronyms</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Table</span><span class="Other">[</span><a href="strlib.html#Case"><span class="Identifier">Case</span></a><span class="Other">,</span>
-    <span class="Identifier">string</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
-<dd>
-
-Get a <tt class="docutils literal"><span class="pre">Table[Case, string]</span></tt> of all the difference cases from <tt class="docutils literal"><span class="pre">variable</span></tt>.
-&nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L67"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L67" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
 <a id="count,string,HashSet[char]"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#count%2Cstring%2CHashSet%5Bchar%5D"><span class="Identifier">count</span></a><span class="Other">(</span><span class="Identifier">word</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">chars</span><span class="Other">:</span> <span class="Identifier">HashSet</span><span class="Other">[</span><span class="Identifier">char</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Table</span><span class="Other">[</span><span class="Identifier">char</span><span class="Other">,</span> <span class="Identifier">int</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
@@ -999,32 +906,77 @@ class="link-seesrc" target="_blank">Source</a>
 
 Similar to <tt class="docutils literal"><span class="pre">count</span></tt> in <tt class="docutils literal"><span class="pre">strutil</span></tt> <a class="reference external" href="https://nim-lang.org/docs/strutils.html#count%2Cstring%2Cset%5Bchar%5D">here</a> but it returns the count of each <tt class="docutils literal"><span class="pre">char</span></tt> in <tt class="docutils literal"><span class="pre">chars</span></tt> individually in a table.
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L78"
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L13"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L78" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L13" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="parseInt,char"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#parseInt%2Cchar"><span class="Identifier">parseInt</span></a><span class="Other">(</span><span class="Identifier">number</span><span class="Other">:</span> <span class="Identifier">char</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#parseInt%2Cchar"><span class="Identifier">parseInt</span></a><span class="Other">(</span><span class="Identifier">num</span><span class="Other">:</span> <span class="Identifier">char</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><a href="strlib.html#NotADigitError"><span class="Identifier">NotADigitError</span></a><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-
+Parse <tt class="docutils literal"><span class="pre">num</span></tt> into an <tt class="docutils literal"><span class="pre">int</span></tt>. Will raise <tt class="docutils literal"><span class="pre">NotADigitError</span></tt> if <tt class="docutils literal"><span class="pre">num</span></tt> is not a digit.
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L91"
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L26"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L91" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L26" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<a id="parseInt,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#parseInt%2Cstring"><span class="Identifier">parseInt</span></a><span class="Other">(</span><span class="Identifier">num</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">NotADigitError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+Parse <tt class="docutils literal"><span class="pre">num</span></tt> into an <tt class="docutils literal"><span class="pre">int</span></tt>. Will raise <tt class="docutils literal"><span class="pre">NotADigitError</span></tt> if <tt class="docutils literal"><span class="pre">num</span></tt> is not a digit.
+&nbsp;&nbsp;<a
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L33"
+class="link-seesrc" target="_blank">Source</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L33" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<a id="substr,string,int,int"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#substr%2Cstring%2Cint%2Cint"><span class="Identifier">substr</span></a><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">first</span><span class="Other">,</span> <span class="Identifier">last</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">InvalidIndexError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+Similar to <tt class="docutils literal"><span class="pre">substr</span></tt> in <tt class="docutils literal"><span class="pre">system</span></tt> <a class="reference external" href="https://nim-lang.org/docs/system.html#substr%2Cstring%2Cint%2Cint">here</a> but this is done in place.
+&nbsp;&nbsp;<a
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L45"
+class="link-seesrc" target="_blank">Source</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L45" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<a id="trim,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#trim%2Cstring"><span class="Identifier">trim</span></a><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">InvalidIndexError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+Trim whitespaces of the given string. Similar to <tt class="docutils literal"><span class="pre">strip</span></tt> in <tt class="docutils literal"><span class="pre">strutils</span></tt> <a class="reference external" href="https://nim-lang.org/docs/strutils.html#strip%2Cstring%2Cset%5Bchar%5D">here</a> but this is done in place.
+&nbsp;&nbsp;<a
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L58"
+class="link-seesrc" target="_blank">Source</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L58" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="replace,seq[T][char],Table[string,string]"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#replace%2Cseq%5BT%5D%5Bchar%5D%2CTable%5Bstring%2Cstring%5D"><span class="Identifier">replace</span></a><span class="Other">(</span><span class="Identifier">input</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">char</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">replacements</span><span class="Other">:</span> <span class="Identifier">Table</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">,</span> <span class="Identifier">string</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">char</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+<dt><pre><span class="Keyword">proc</span> <a href="#replace%2Cseq%5BT%5D%5Bchar%5D%2CTable%5Bstring%2Cstring%5D"><span class="Identifier">replace</span></a><span class="Other">(</span><span class="Identifier">input</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">char</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">replacements</span><span class="Other">:</span> <span class="Identifier">Table</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">,</span> <span class="Identifier">string</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-Similar to <tt class="docutils literal"><span class="pre">multiReplace</span></tt> in <tt class="docutils literal"><span class="pre">strutil</span></tt> <a class="reference external" href="https://nim-lang.org/docs/strutils.html#multiReplace%2Cstring%2Cvarargs%5B%5D">here</a> but it takes in <tt class="docutils literal"><span class="pre">Table[string, string]</span></tt> instead of <tt class="docutils literal"><span class="pre">varargs[tuple(string, string)]</span></tt>.
+Similar to <tt class="docutils literal"><span class="pre">multiReplace</span></tt> in <tt class="docutils literal"><span class="pre">strutils</span></tt> <a class="reference external" href="https://nim-lang.org/docs/strutils.html#multiReplace%2Cstring%2Cvarargs%5B%5D">here</a> but it takes in <tt class="docutils literal"><span class="pre">Table[string, string]</span></tt> instead of <tt class="docutils literal"><span class="pre">varargs[tuple(string, string)]</span></tt>.
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L96"
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L80"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L96" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L80" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<a id="replace,string,Table[string,string]"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#replace%2Cstring%2CTable%5Bstring%2Cstring%5D"><span class="Identifier">replace</span></a><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">replacements</span><span class="Other">:</span> <span class="Identifier">Table</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">,</span> <span class="Identifier">string</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+Similar to <tt class="docutils literal"><span class="pre">multiReplace</span></tt> in <tt class="docutils literal"><span class="pre">strutils</span></tt> <a class="reference external" href="https://nim-lang.org/docs/strutils.html#multiReplace%2Cstring%2Cvarargs%5B%5D">here</a> but it takes in <tt class="docutils literal"><span class="pre">Table[string, string]</span></tt> instead of <tt class="docutils literal"><span class="pre">varargs[tuple(string, string)]</span></tt>.
+&nbsp;&nbsp;<a
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L107"
+class="link-seesrc" target="_blank">Source</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L107" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="seqCharToString,seq[T][char]"></a>
@@ -1033,31 +985,20 @@ class="link-seesrc" target="_blank">Source</a>
 
 Converts a <tt class="docutils literal"><span class="pre">seq[char]</span></tt> to <tt class="docutils literal"><span class="pre">string</span></tt>
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L124"
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L139"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L124" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L139" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="width,seq[T][string]"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#width%2Cseq%5BT%5D%5Bstring%5D"><span class="Identifier">width</span></a><span class="Other">(</span><span class="Identifier">strs</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-
+A <tt class="docutils literal"><span class="pre">seq</span></tt> of <tt class="docutils literal"><span class="pre">str.len()</span></tt>.
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L130"
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L146"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L130" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-<a id="maxWidth,seq[T][string]"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#maxWidth%2Cseq%5BT%5D%5Bstring%5D"><span class="Identifier">maxWidth</span></a><span class="Other">(</span><span class="Identifier">fields</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
-<dd>
-
-Get longest width string for each column of the field (separated by space).
-&nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L136"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L136" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L146" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="find,string,char,char,string"></a>
@@ -1070,9 +1011,9 @@ Find location of <tt class="docutils literal"><span class="pre">toFind</span></t
 <pre class="listing"><span class="Identifier">doAssert</span> <span class="Identifier">find</span><span class="Other">(</span><span class="StringLit">&quot;&lt;A,B&gt;,B&quot;</span><span class="Other">,</span> <span class="CharLit">'&lt;'</span><span class="Other">,</span> <span class="CharLit">'&gt;'</span><span class="Other">,</span> <span class="StringLit">&quot;,&quot;</span><span class="Other">)</span> <span class="Operator">==</span> <span class="Operator">@</span><span class="Other">[</span><span class="DecNumber">5</span><span class="Other">]</span>
 <span class="Identifier">doAssert</span> <span class="Identifier">find</span><span class="Other">(</span><span class="StringLit">&quot;A,&lt;B,C&gt;&quot;</span><span class="Other">,</span> <span class="CharLit">'&lt;'</span><span class="Other">,</span> <span class="CharLit">'&gt;'</span><span class="Other">,</span> <span class="StringLit">&quot;,&quot;</span><span class="Other">)</span> <span class="Operator">==</span> <span class="Operator">@</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L148"
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L153"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L148" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L153" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="split,string,char,char,string"></a>
@@ -1086,9 +1027,9 @@ Split string into a sequence of string based on the given info from <a class="re
 <span class="Identifier">doAssert</span> <span class="Identifier">split</span><span class="Other">(</span><span class="StringLit">&quot;&lt;A, &lt;B, C&gt;&gt;, &lt;A, &lt;B, C&gt;&gt;, &lt;X, Y&gt;&quot;</span><span class="Other">,</span> <span class="CharLit">'&lt;'</span><span class="Other">,</span> <span class="CharLit">'&gt;'</span><span class="Other">,</span> <span class="StringLit">&quot;, &quot;</span><span class="Other">)</span> <span class="Operator">==</span>
     <span class="Operator">@</span><span class="Other">[</span><span class="StringLit">&quot;&lt;A, &lt;B, C&gt;&gt;&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;&lt;A, &lt;B, C&gt;&gt;&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;&lt;X, Y&gt;&quot;</span><span class="Other">]</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L171"
+href="https://github.com/binhonglee/stones/tree/master/src/strlib.nim#L176"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L171" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/strlib.nim#L176" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -1101,7 +1042,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-12-31 20:34:15 UTC</small>
+        <small>Made with Nim. Generated: 2020-01-04 20:46:22 UTC</small>
       </div>
     </div>
   </div>

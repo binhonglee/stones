@@ -1,6 +1,9 @@
+ConflictingValueError	genlib.html#ConflictingValueError	genlib: ConflictingValueError	
+DuplicateKeyError	genlib.html#DuplicateKeyError	genlib: DuplicateKeyError	
 merge	genlib.html#merge,Table[A,B],Table[A,B],bool	genlib: merge[A, B](first: var Table[A, B]; second: Table[A, B]; ignoreDup: bool = true): void	
 merge	genlib.html#merge,HashSet[T],HashSet[T]	genlib: merge[T](first: var HashSet[T]; second: HashSet[T]): void	
 getResult	genlib.html#getResult,T,proc(T)	genlib: getResult[T](input: T; p: proc (x: var T)): T	
 getResult	genlib.html#getResult,T,T,proc(T,T)	genlib: getResult[T](input: T; arg: T; p: proc (x: var T; y: T)): T	
 getResult	genlib.html#getResult,A,B,proc(A,B)	genlib: getResult[A, B](input: A; arg: B; p: proc (x: var A; y: B)): A	
 getResult	genlib.html#getResult,T,proc(T,varargs[T]),varargs[T]	genlib: getResult[T](input: T; p: proc (x: var T; y: varargs[T]); args: varargs[T]): T	
+getResult	genlib.html#getResult,A,proc(A,varargs[B]),varargs[B]	genlib: getResult[A, B](input: A; p: proc (x: var A; y: varargs[B]); args: varargs[B]): A	

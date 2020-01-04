@@ -1,79 +1,14 @@
-from strutils import capitalizeAscii, continuesWith, replace, split, toUpperAscii
+from strutils
+import isDigit, isSpaceAscii, replace, split
 from sequtils import delete, insert, toSeq
 import sets
 import tables
 
-var acronyms: HashSet[string] = initHashSet[string]()
+type
+  InvalidIndexError* = object of Exception
 
 type
-  Case* = enum
-    ## Supported case types.
-    Default = "DEFAULT",
-    Camel = "CAMEL",
-    Kebab = "KEBAB",
-    Lower = "LOWER",
-    Pascal = "PASCAL",
-    Snake = "SNAKE",
-    Upper = "UPPER",
-
-proc setAcronyms*(configAcronyms: HashSet[string]): void =
-  ## Setter for acronyms to always apply ALLCAPS.
-  acronyms = configAcronyms
-
-proc camelCase*(variable: string, acronyms: HashSet[string] = acronyms): string =
-  ## Converts `snake_case` string to `camelCase`.
-  let words: seq[string] = variable.split("_")
-  result = ""
-
-  for word in words:
-    if acronyms.contains(word):
-      result &= toUpperAscii(word)
-    elif result == "":
-      result &= word
-    else:
-      result &= capitalizeAscii(word)
-
-proc kebabCase*(variable: string): string =
-  ## Converts `snake_case` string to `kebab-case`.
-  result = variable.replace("_", "-")
-
-proc lowerCase*(variable: string): string =
-  ## Converts `snake_case` string to `lowercase`.
-  result = variable.replace("_", "")
-
-proc pascalCase*(variable: string, acronyms: HashSet[string] = acronyms): string =
-  ## Converts `snake_case` string to `PascalCase`.
-  result = capitalizeAscii(camelCase(variable, acronyms))
-
-proc upperCase*(variable: string): string =
-  ## Converts `snake_case` string to `UPPER_CASE`.
-  result = toUpperAscii(variable)
-
-proc format*(c: Case, variable: string, acronyms: HashSet[string] = acronyms): string =
-  case c
-  of Camel:
-    result = camelCase(variable, acronyms)
-  of Kebab:
-    result = kebabCase(variable)
-  of Lower:
-    result = lowerCase(variable)
-  of Pascal:
-    result = pascalCase(variable, acronyms)
-  of Upper:
-    result = upperCase(variable)
-  else:
-    result = variable
-
-proc allCases*(variable: string, acronyms: HashSet[string] = acronyms): Table[Case, string] =
-  ## Get a `Table[Case, string]` of all the difference cases from `variable`.
-  result = initTable[Case, string]()
-  result.add(Case.Default, variable)
-  result.add(Case.Camel, camelCase(variable, acronyms))
-  result.add(Case.Kebab, kebabCase(variable))
-  result.add(Case.Lower, lowerCase(variable))
-  result.add(Case.Pascal, pascalCase(variable, acronyms))
-  result.add(Case.Snake, variable)
-  result.add(Case.Upper, upperCase(variable))
+  NotADigitError* = object of Exception
 
 proc count*(word: string, chars: HashSet[char]): Table[char, int] =
   ## Similar to `count` in `strutil`
@@ -81,20 +16,69 @@ proc count*(word: string, chars: HashSet[char]): Table[char, int] =
   ## but it returns the count of each `char` in `chars` individually in a table.
   result = initTable[char, int]()
 
-  for cz in word:
-    if cz in chars:
-      if not result.hasKey(cz):
-        result.add(cz, 1)
+  for c in word:
+    if c in chars:
+      if not result.hasKey(c):
+        result.add(c, 1)
       else:
-        inc(result[cz])
+        inc(result[c])
 
-proc parseInt*(number: char): int =
-  if int(number) < int('0') or int(number) > int('9'):
-    raise newException(Exception, $number & " is not a number.")
-  result = int(number) - int('0')
+proc parseInt*(num: char): int {.raises: [NotADigitError].} =
+  ## Parse `num` into an `int`.
+  ## Will raise `NotADigitError` if `num` is not a digit.
+  if not isDigit(num):
+    raise newException(NotADigitError, $num & " is not a digit.")
+  result = int(num) - int('0')
 
-proc replace*(input: var seq[char], replacements: Table[string, string]): seq[char] =
-  ## Similar to `multiReplace` in `strutil`
+proc parseInt*(num: string): int =
+  ## Parse `num` into an `int`.
+  ## Will raise `NotADigitError` if `num` is not a digit.
+  result = 0
+  var first: bool = true
+  for c in num:
+    if not first:
+      result *= 10
+    else:
+      first = false
+    result += parseInt(c)
+
+proc substr*(s: var string, first, last: int): void =
+  ## Similar to `substr` in `system`
+  ## `here <https://nim-lang.org/docs/system.html#substr%2Cstring%2Cint%2Cint>`_
+  ## but this is done in place.
+  if first > last or first > (s.len() - 1) or last < 0:
+    raise newException(InvalidIndexError, "`first` or `last` value given is invalid")
+
+  let start = max(first, 0)
+  let stop = max(min(last, high(s)) - start, 0)
+  for i in 0..(stop):
+    s[i] = s[start + i]
+  s.setLen(stop + 1)
+
+proc trim*(s: var string): void =
+  ## Trim whitespaces of the given string.
+  ## Similar to `strip` in `strutils`
+  ## `here <https://nim-lang.org/docs/strutils.html#strip%2Cstring%2Cset%5Bchar%5D>`_
+  ## but this is done in place.
+  var beginLoc: int
+  var stopLoc: int
+
+  var start = false
+  var i: int = 0
+
+  for c in s:
+    if not c.isSpaceAscii():
+      if not start:
+        start = true
+        beginLoc = i
+      else:
+        stopLoc = i
+    inc(i)
+
+  s.substr(beginLoc, stopLoc)
+
+proc replace*(input: var seq[char], replacements: Table[string, string]): void =
+  ## Similar to `multiReplace` in `strutils`
   ## `here <https://nim-lang.org/docs/strutils.html#multiReplace%2Cstring%2Cvarargs%5B%5D>`_
   ## but it takes in `Table[string, string]` instead of `varargs[tuple(string, string)]`.
   var i: int = 0
@@ -119,31 +103,52 @@ proc replace*(input: var seq[char], replacements: Table[string, string]): seq[ch
           input.delete(i, i + j)
           input.insert(toSeq(replacements[word].items), i)
     inc(i)
-  result = input
+
+proc replace*(s: string, replacements: Table[string, string]): string =
+  ## Similar to `multiReplace` in `strutils`
+  ## `here <https://nim-lang.org/docs/strutils.html#multiReplace%2Cstring%2Cvarargs%5B%5D>`_
+  ## but it takes in `Table[string, string]` instead of `varargs[tuple(string, string)]`.
+  var i: int = 0
+  var prev: int = 0
+  var firstChars: Table[char, HashSet[string]] = initTable[char, HashSet[string]]()
+  result = ""
+
+  for word in replacements.keys:
+    if not firstChars.hasKey(word[0]):
+      firstChars.add(word[0], initHashSet[string]())
+    firstChars[word[0]].incl(word)
+
+  while i < s.len():
+    if firstChars.hasKey(s[i]):
+      for word in firstChars[s[i]]:
+        var j: int = 0
+        var same: bool = true
+        while word.len() - j > 0 and s.len() > i + j and same:
+          if word[j] == s[i + j]:
+            inc(j)
+          else:
+            same = false
+
+        if word.len() - j == 0 and same:
+          result &= system.substr(s, prev, i - 1) & replacements[word]
+          prev = i + j
+          i = prev - 1
+    inc(i)
+  result &= system.substr(s, prev, i - 1)
 
 proc seqCharToString*(input: seq[char]): string =
   ## Converts a `seq[char]` to `string`
-  result = newStringOfCap(len(input))
-  for cz in input:
-      add(result, cz)
+  result = newString(len(input))
+  var i = 0
+  for c in input:
+      result[i] = c
 
 proc width*(strs: seq[string]): seq[int] =
+  ## A `seq` of `str.len()`.
   result = newSeq[int](0)
 
   for i in 0..(strs.len() - 1):
     result.add(strs[i].len())
-
-proc maxWidth*(fields: seq[string]): seq[int] =
-  ## Get longest width string for each column of the field (separated by space).
-  result = newSeq[int](0)
-
-  for fieldStr in fields:
-    let field = fieldStr.split(' ')
-    for i in 0..(field.len() - 1):
-          if i >= result.len():
-            result.add(field[i].len())
-          elif field[i].len() > result[i]:
-            result[i] = field[i].len()
 
 proc find*(str: string, open: char, close: char, toFind: string): seq[int] =
   ## Find location of `toFind` in `str` when the `open` and `close` character count is the same
