@@ -216,16 +216,33 @@ proc format*(
 
 proc allCases*(
   s: string,
-  acronyms: HashSet[string] = acronyms
+  c: Case = Default,
+  acronyms: HashSet[string] = acronyms,
 ): Table[Case, string] =
   ## Get a `Table[Case, string]` of all the difference cases from `s`.
-  let t = format(Snake, s, acronyms)
+  var t: string
+  case c
+  of Default:
+    t = format(Snake, s, acronyms)
+  of Camel:
+    t = fromCamelCase(s, acronyms)
+  of Kebab:
+    t = fromKebabCase(s)
+  of Lower:
+    raise newException(Exception, "Unsupported origin case for conversion.")
+  of Pascal:
+    t = fromPascalCase(s, acronyms)
+  of Snake:
+    t = s
+  of Upper:
+    t = fromUpperCase(s)
+
   result = initTable[Case, string]()
-  result.add(Case.Default, s)
-  result.add(Case.Camel, toCamelCase(t, acronyms))
-  result.add(Case.Kebab, toKebabCase(t))
-  result.add(Case.Lower, toLowerCase(t))
-  result.add(Case.Pascal, toPascalCase(t, acronyms))
-  result.add(Case.Snake, t)
-  result.add(Case.Upper, toUpperCase(t))
+  result.add(Default, s)
+  result.add(Camel, toCamelCase(t, acronyms))
+  result.add(Kebab, toKebabCase(t))
+  result.add(Lower, toLowerCase(t))
+  result.add(Pascal, toPascalCase(t, acronyms))
+  result.add(Snake, t)
+  result.add(Upper, toUpperCase(t))
 
