@@ -1,0 +1,27 @@
+UnsupportedCharacterError	stones/cases.html#UnsupportedCharacterError	cases: UnsupportedCharacterError	
+Default	stones/cases.html#Default	Case.Default	
+Camel	stones/cases.html#Camel	Case.Camel	
+Kebab	stones/cases.html#Kebab	Case.Kebab	
+Lower	stones/cases.html#Lower	Case.Lower	
+Pascal	stones/cases.html#Pascal	Case.Pascal	
+Snake	stones/cases.html#Snake	Case.Snake	
+Upper	stones/cases.html#Upper	Case.Upper	
+Case	stones/cases.html#Case	cases: Case	
+setAcronyms	stones/cases.html#setAcronyms,HashSet[string]	cases: setAcronyms(configAcronyms: HashSet[string]): void	
+fromCamelCase	stones/cases.html#fromCamelCase,string,HashSet[string]	cases: fromCamelCase(s: string; acronyms: HashSet[string] = acronyms): string	
+toCamelCase	stones/cases.html#toCamelCase,string,HashSet[string]	cases: toCamelCase(s: string; acronyms: HashSet[string] = acronyms): string	
+fromKebabCase	stones/cases.html#fromKebabCase,string	cases: fromKebabCase(s: string): string	
+toKebabCase	stones/cases.html#toKebabCase,string	cases: toKebabCase(s: string): string	
+toLowerCase	stones/cases.html#toLowerCase,string	cases: toLowerCase(s: string): string	
+fromPascalCase	stones/cases.html#fromPascalCase,string,HashSet[string]	cases: fromPascalCase(s: string; acronyms: HashSet[string] = acronyms): string	
+toPascalCase	stones/cases.html#toPascalCase,string,HashSet[string]	cases: toPascalCase(s: string; acronyms: HashSet[string] = acronyms): string	
+fromUpperCase	stones/cases.html#fromUpperCase,string	cases: fromUpperCase(s: string): string	
+toUpperCase	stones/cases.html#toUpperCase,string	cases: toUpperCase(s: string): string	
+camelCase	stones/cases.html#camelCase,string,HashSet[string]	cases: camelCase(s: string; acronyms: HashSet[string] = acronyms): string	
+kebabCase	stones/cases.html#kebabCase,string	cases: kebabCase(s: string): string	
+lowerCase	stones/cases.html#lowerCase,string	cases: lowerCase(s: string): string	
+pascalCase	stones/cases.html#pascalCase,string,HashSet[string]	cases: pascalCase(s: string; acronyms: HashSet[string] = acronyms): string	
+upperCase	stones/cases.html#upperCase,string	cases: upperCase(s: string): string	
+currentCase	stones/cases.html#currentCase,string	cases: currentCase(s: string): Case	
+format	stones/cases.html#format,Case,string,HashSet[string]	cases: format(c: Case; s: string; acronyms: HashSet[string] = acronyms): string	
+allCases	stones/cases.html#allCases,string,Case,HashSet[string]	cases: allCases(s: string; c: Case = Default; acronyms: HashSet[string] = acronyms): Table[Case,\n    string]	

@@ -1,0 +1,11 @@
+GenericError	stones/log.html#GenericError	log: GenericError	
+FATAL	stones/log.html#FATAL	AlertLevel.FATAL	
+ERROR	stones/log.html#ERROR	AlertLevel.ERROR	
+SUCCESS	stones/log.html#SUCCESS	AlertLevel.SUCCESS	
+DEPRECATED	stones/log.html#DEPRECATED	AlertLevel.DEPRECATED	
+WARNING	stones/log.html#WARNING	AlertLevel.WARNING	
+INFO	stones/log.html#INFO	AlertLevel.INFO	
+DEBUG	stones/log.html#DEBUG	AlertLevel.DEBUG	
+AlertLevel	stones/log.html#AlertLevel	log: AlertLevel	
+LOG	stones/log.html#LOG,AlertLevel,string,typedesc	log: LOG(level: AlertLevel; message: string; exception: typedesc = GenericError): void	
+setLevel	stones/log.html#setLevel,AlertLevel	log: setLevel(level: AlertLevel): void	

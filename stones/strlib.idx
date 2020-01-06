@@ -1,0 +1,13 @@
+InvalidIndexError	stones/strlib.html#InvalidIndexError	strlib: InvalidIndexError	
+NotADigitError	stones/strlib.html#NotADigitError	strlib: NotADigitError	
+count	stones/strlib.html#count,string,HashSet[char]	strlib: count(word: string; chars: HashSet[char]): Table[char, int]	
+parseInt	stones/strlib.html#parseInt,char	strlib: parseInt(num: char): int	
+parseInt	stones/strlib.html#parseInt,string	strlib: parseInt(num: string): int	
+substr	stones/strlib.html#substr,string,int,int	strlib: substr(s: var string; first, last: int): void	
+trim	stones/strlib.html#trim,string	strlib: trim(s: var string): void	
+replace	stones/strlib.html#replace,seq[T][char],Table[string,string]	strlib: replace(input: var seq[char]; replacements: Table[string, string]): void	
+replace	stones/strlib.html#replace,string,Table[string,string]	strlib: replace(s: string; replacements: Table[string, string]): string	
+seqCharToString	stones/strlib.html#seqCharToString,seq[T][char]	strlib: seqCharToString(input: seq[char]): string	
+width	stones/strlib.html#width,seq[T][string]	strlib: width(strs: seq[string]): seq[int]	
+find	stones/strlib.html#find,string,char,char,string	strlib: find(str: string; open: char; close: char; toFind: string): seq[int]	
+split	stones/strlib.html#split,string,char,char,string	strlib: split(str: string; open: char; close: char; separator: string): seq[string]	
