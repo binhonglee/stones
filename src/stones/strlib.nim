@@ -141,7 +141,8 @@ proc seqCharToString*(input: seq[char]): string =
   result = newString(len(input))
   var i = 0
   for c in input:
-      result[i] = c
+    result[i] = c
+    inc(i)
 
 proc width*(strs: seq[string]): seq[int] =
   ## A `seq` of `str.len()`.

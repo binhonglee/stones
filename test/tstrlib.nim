@@ -215,6 +215,17 @@ suite "replace(string)":
 
     check replace(s1, t) == s1
 
+suite "seqCharToString()":
+  test "simple usecase":
+    const sc: seq[char] = @['a', 'b', 'c', 'd']
+    const s: string = "abcd"
+    check seqCharToString(sc) == s
+
+  test "empty seq":
+    const sc: seq[char] = @[]
+    const s: string = ""
+    check seqCharToString(sc) == s
+
 suite "width()":
   test "simple usecase":
     const ss: seq[string] = @["string1", "string2", "s3"]

@@ -7,6 +7,20 @@ type
 type
   DuplicateKeyError* = object of Exception
 
+## START referenced from https://forum.nim-lang.org/t/3342
+type
+  Conditions[T] = object
+    y, n: T
+
+proc `|`*[T](a, b: T): Conditions[T] {.inline.} = Conditions[T](y: a, n: b)
+
+template `?`*[T](cond: bool; p: Conditions[T]): T =
+  (if cond: p.y else: p.n)
+## END referenced from https://forum.nim-lang.org/t/3342
+
+template `??`*[T](x: T, y: T): T =
+  (if isNil(x): y else: x)
+
 proc merge*[A, B](
   first: var Table[A, B],
   second: Table[A, B],

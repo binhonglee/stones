@@ -1,6 +1,40 @@
 import sets, tables, unittest
 import genlib
 
+suite "tenary operators":
+  test "boolean":
+    check true ? true | false
+    check false ? false | true
+
+  test "int":
+    check 1 == 1 ? true | false
+    check 2 == 1 ? false | true
+    check (true ? 1 | 2) == 1
+    check (false ? 1 | 2) == 2
+    check (1 == 1 ? 1 | 2) == 1
+    check (1 == 2 ? 1 | 2) == 2
+
+  test "string":
+    check "a" == "a" ? true | false
+    check "a" == "b" ? false | true
+    check (true ? "a" | "b") == "a"
+    check (false ? "a" | "b") == "b"
+    check ("a" == "a" ? "a" | "b") == "a"
+    check ("a" == "b" ? "a" | "b") == "b"
+
+  type
+    TestObj = ref object of RootObj
+      x: int
+
+  test "??":
+    var a: TestObj
+    var b = TestObj()
+    b.x = 10
+
+    check isNil(a)
+    check not isNil(b)
+    check (a ?? b).x == b.x
+
 suite "merge[A, B]()":
   const t1: Table[string, string] = {
     "a": "b",
