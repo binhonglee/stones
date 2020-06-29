@@ -6,7 +6,6 @@ mode = ScriptMode.Verbose
 const gitURL: string = "https://github.com/binhonglee/stones"
 const folder: string = "docs"
 const mainDir: string = "src"
-const master: string = "master"
 const devel: string = "devel"
 
 proc genRun(): void =
@@ -22,7 +21,7 @@ proc genRun(): void =
     exec(
       "nim doc --project --index:on -o:" & folder &
       "/ --git.url:" & gitURL &
-      " --git.commit:" & master &
+      " --git.commit:" & devel &
       " --git.devel:" & devel & " " & file
     )
 

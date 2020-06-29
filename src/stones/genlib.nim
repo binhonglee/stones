@@ -7,18 +7,29 @@ type
 type
   DuplicateKeyError* = object of Exception
 
-## START referenced from https://forum.nim-lang.org/t/3342
+# START referenced from https://forum.nim-lang.org/t/3342
 type
   Conditions[T] = object
     y, n: T
 
-proc `|`*[T](a, b: T): Conditions[T] {.inline.} = Conditions[T](y: a, n: b)
+proc `|`*[T](a, b: T): Conditions[T] {.inline.} =
+  Conditions[T](y: a, n: b)
 
 template `?`*[T](cond: bool; p: Conditions[T]): T =
+  ## Tenary operator for inline if else.
+  runnableExamples:
+    var a = true
+    var b: int = a ? 5 | 10
+    doAssert b == 5
+    a = false
+    b = a ? 9 | 3
+    doAssert b == 3
   (if cond: p.y else: p.n)
-## END referenced from https://forum.nim-lang.org/t/3342
+# END referenced from https://forum.nim-lang.org/t/3342
 
 template `??`*[T](x: T, y: T): T =
+  ## Assign the value on the right hand side when the value on the left hand
+  ## side is `nil`.
   (if isNil(x): y else: x)
 
 proc merge*[A, B](

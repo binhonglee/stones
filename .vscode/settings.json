@@ -3,6 +3,7 @@
   "editor.autoIndent": "full",
   "editor.detectIndentation": false,
   "editor.insertSpaces": true,
+  "editor.rulers": [80],
   "editor.tabSize": 2,
   "files.insertFinalNewline": true,
   "files.watcherExclude": {

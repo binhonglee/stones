@@ -4,6 +4,10 @@ os:
 
 language: c
 
+env:
+  - BRANCH=1.0.6
+  - BRANCH=1.2.0
+
 cache:
   directories:
     - "$HOME/.nimble/bin"
@@ -21,13 +25,21 @@ install:
 
 script:
   - nimble -y test
+
+before_deploy:
   - nimble docs
 
 deploy:
   provider: pages
-  skip_cleanup: true
+  edge: true
+  cleanup: false
+  strategy: git
+  keep_history: true
   token: $GITHUB_TOKEN
   target_branch: gh-pages
   local_dir: docs
   on:
-    branch: master
+    branch: devel
+    condition:
+      - "$(uname -s) = Darwin"
+      - "$BRANCH = 1.2.0"
