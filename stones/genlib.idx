@@ -1,5 +1,8 @@
 ConflictingValueError	stones/genlib.html#ConflictingValueError	genlib: ConflictingValueError	
 DuplicateKeyError	stones/genlib.html#DuplicateKeyError	genlib: DuplicateKeyError	
+`|`	stones/genlib.html#|,T,T	genlib: `|`[T](a, b: T): Conditions[T]	
+`?`	stones/genlib.html#?.t,bool,Conditions[T]	genlib: `?`[T](cond: bool; p: Conditions[T]): T	
+`??`	stones/genlib.html#??.t,T,T	genlib: `??`[T](x: T; y: T): T	
 merge	stones/genlib.html#merge,Table[A,B],Table[A,B],bool	genlib: merge[A, B](first: var Table[A, B]; second: Table[A, B]; ignoreDup: bool = true): void	
 merge	stones/genlib.html#merge,HashSet[T],HashSet[T]	genlib: merge[T](first: var HashSet[T]; second: HashSet[T]): void	
 getResult	stones/genlib.html#getResult,T,proc(T)	genlib: getResult[T](input: T; p: proc (x: var T)): T	
