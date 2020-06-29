@@ -1,0 +1,11 @@
+Stack	stones/sq.html#Stack	sq: Stack	
+Queue	stones/sq.html#Queue	sq: Queue	
+initStack	stones/sq.html#initStack	sq: initStack[T](): Stack[T]	
+add	stones/sq.html#add,Stack[T],SinglyLinkedNode[T]	sq: add[T](stack: var Stack[T]; node: SinglyLinkedNode[T]): void	
+add	stones/sq.html#add,Stack[T],T	sq: add[T](stack: var Stack[T]; value: T): void	
+initQueue	stones/sq.html#initQueue	sq: initQueue[T](): Queue[T]	
+add	stones/sq.html#add,Queue[T],SinglyLinkedNode[T]	sq: add[T](queue: var Queue[T]; node: SinglyLinkedNode[T]): void	
+add	stones/sq.html#add,Queue[T],T	sq: add[T](queue: var Queue[T]; value: T): void	
+peek	stones/sq.html#peek,SomeList[T]	sq: peek[T](list: var SomeList[T]): (SinglyLinkedNode[T])	
+pop	stones/sq.html#pop,SomeList[T]	sq: pop[T](list: var SomeList[T]): (SinglyLinkedNode[T])	
+len	stones/sq.html#len,SomeList[T]	sq: len[T](list: var SomeList[T]): int	

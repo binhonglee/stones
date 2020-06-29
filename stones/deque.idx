@@ -1,0 +1,11 @@
+Deque	stones/deque.html#Deque	deque: Deque	
+initDeque	stones/deque.html#initDeque	deque: initDeque[T](): Deque[T]	
+addFront	stones/deque.html#addFront,Deque[T],DoublyLinkedNode[T]	deque: addFront[T](deque: var Deque[T]; node: DoublyLinkedNode[T])	
+addFront	stones/deque.html#addFront,Deque[T],T	deque: addFront[T](deque: var Deque[T]; value: T)	
+addRear	stones/deque.html#addRear,Deque[T],DoublyLinkedNode[T]	deque: addRear[T](deque: var Deque[T]; node: DoublyLinkedNode[T])	
+addRear	stones/deque.html#addRear,Deque[T],T	deque: addRear[T](deque: var Deque[T]; value: T)	
+peekFront	stones/deque.html#peekFront,Deque[T]	deque: peekFront[T](deque: var Deque[T]): (DoublyLinkedNode[T])	
+peekRear	stones/deque.html#peekRear,Deque[T]	deque: peekRear[T](deque: var Deque[T]): (DoublyLinkedNode[T])	
+popFront	stones/deque.html#popFront,Deque[T]	deque: popFront[T](deque: var Deque[T]): (DoublyLinkedNode[T])	
+popRear	stones/deque.html#popRear,Deque[T]	deque: popRear[T](deque: var Deque[T]): (DoublyLinkedNode[T])	
+len	stones/deque.html#len,Deque[T]	deque: len[T](deque: var Deque[T]): int	

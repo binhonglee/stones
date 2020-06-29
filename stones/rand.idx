@@ -1,0 +1,1 @@
+randString	stones/rand.html#randString,int	rand: randString(length: int): string	

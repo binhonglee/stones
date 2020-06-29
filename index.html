@@ -72,7 +72,7 @@ function main() {
 <div class="document" id="documentId">
   <div class="container">
     <h1 class="title">Index</h1>
-    Modules: <a href="stones/cases.html">stones/cases</a>, <a href="stones/genlib.html">stones/genlib</a>, <a href="stones/log.html">stones/log</a>, <a href="stones/strlib.html">stones/strlib</a>.<br/><p /><h2>API symbols</h2>
+    Modules: <a href="stones/cases.html">stones/cases</a>, <a href="stones/deque.html">stones/deque</a>, <a href="stones/genlib.html">stones/genlib</a>, <a href="stones/log.html">stones/log</a>, <a href="stones/rand.html">stones/rand</a>, <a href="stones/sq.html">stones/sq</a>, <a href="stones/strlib.html">stones/strlib</a>.<br/><p /><h2>API symbols</h2>
 <dl><dt><a name="%60%3F%3F%60" href="#%60%3F%3F%60"><span>`??`:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="genlib: `??`[T](x: T; y: T): T" href="stones/genlib.html#%3F%3F.t%2CT%2CT">genlib: `??`[T](x: T; y: T): T</a></li>
@@ -84,6 +84,28 @@ function main() {
 <dt><a name="%60%7C%60" href="#%60%7C%60"><span>`|`:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="genlib: `|`[T](a, b: T): Conditions[T]" href="stones/genlib.html#%7C%2CT%2CT">genlib: `|`[T](a, b: T): Conditions[T]</a></li>
+          </ul></dd>
+<dt><a name="add" href="#add"><span>add:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="sq: add[T](queue: var Queue[T]; node: SinglyLinkedNode[T]): void" href="stones/sq.html#add%2CQueue%5BT%5D%2CSinglyLinkedNode%5BT%5D">sq: add[T](queue: var Queue[T]; node: SinglyLinkedNode[T]): void</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="sq: add[T](queue: var Queue[T]; value: T): void" href="stones/sq.html#add%2CQueue%5BT%5D%2CT">sq: add[T](queue: var Queue[T]; value: T): void</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="sq: add[T](stack: var Stack[T]; node: SinglyLinkedNode[T]): void" href="stones/sq.html#add%2CStack%5BT%5D%2CSinglyLinkedNode%5BT%5D">sq: add[T](stack: var Stack[T]; node: SinglyLinkedNode[T]): void</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="sq: add[T](stack: var Stack[T]; value: T): void" href="stones/sq.html#add%2CStack%5BT%5D%2CT">sq: add[T](stack: var Stack[T]; value: T): void</a></li>
+          </ul></dd>
+<dt><a name="addFront" href="#addFront"><span>addFront:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="deque: addFront[T](deque: var Deque[T]; node: DoublyLinkedNode[T])" href="stones/deque.html#addFront%2CDeque%5BT%5D%2CDoublyLinkedNode%5BT%5D">deque: addFront[T](deque: var Deque[T]; node: DoublyLinkedNode[T])</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="deque: addFront[T](deque: var Deque[T]; value: T)" href="stones/deque.html#addFront%2CDeque%5BT%5D%2CT">deque: addFront[T](deque: var Deque[T]; value: T)</a></li>
+          </ul></dd>
+<dt><a name="addRear" href="#addRear"><span>addRear:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="deque: addRear[T](deque: var Deque[T]; node: DoublyLinkedNode[T])" href="stones/deque.html#addRear%2CDeque%5BT%5D%2CDoublyLinkedNode%5BT%5D">deque: addRear[T](deque: var Deque[T]; node: DoublyLinkedNode[T])</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="deque: addRear[T](deque: var Deque[T]; value: T)" href="stones/deque.html#addRear%2CDeque%5BT%5D%2CT">deque: addRear[T](deque: var Deque[T]; value: T)</a></li>
           </ul></dd>
 <dt><a name="AlertLevel" href="#AlertLevel"><span>AlertLevel:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -130,6 +152,10 @@ function main() {
 <dt><a name="DEPRECATED" href="#DEPRECATED"><span>DEPRECATED:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="AlertLevel.DEPRECATED" href="stones/log.html#DEPRECATED">AlertLevel.DEPRECATED</a></li>
+          </ul></dd>
+<dt><a name="Deque" href="#Deque"><span>Deque:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="deque: Deque" href="stones/deque.html#Deque">deque: Deque</a></li>
           </ul></dd>
 <dt><a name="DuplicateKeyError" href="#DuplicateKeyError"><span>DuplicateKeyError:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -187,6 +213,18 @@ function main() {
 <li><a class="reference external"
           data-doc-search-tag="AlertLevel.INFO" href="stones/log.html#INFO">AlertLevel.INFO</a></li>
           </ul></dd>
+<dt><a name="initDeque" href="#initDeque"><span>initDeque:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="deque: initDeque[T](): Deque[T]" href="stones/deque.html#initDeque">deque: initDeque[T](): Deque[T]</a></li>
+          </ul></dd>
+<dt><a name="initQueue" href="#initQueue"><span>initQueue:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="sq: initQueue[T](): Queue[T]" href="stones/sq.html#initQueue">sq: initQueue[T](): Queue[T]</a></li>
+          </ul></dd>
+<dt><a name="initStack" href="#initStack"><span>initStack:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="sq: initStack[T](): Stack[T]" href="stones/sq.html#initStack">sq: initStack[T](): Stack[T]</a></li>
+          </ul></dd>
 <dt><a name="InvalidIndexError" href="#InvalidIndexError"><span>InvalidIndexError:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="strlib: InvalidIndexError" href="stones/strlib.html#InvalidIndexError">strlib: InvalidIndexError</a></li>
@@ -198,6 +236,12 @@ function main() {
 <dt><a name="kebabCase" href="#kebabCase"><span>kebabCase:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="cases: kebabCase(s: string): string" href="stones/cases.html#kebabCase%2Cstring">cases: kebabCase(s: string): string</a></li>
+          </ul></dd>
+<dt><a name="len" href="#len"><span>len:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="deque: len[T](deque: var Deque[T]): int" href="stones/deque.html#len%2CDeque%5BT%5D">deque: len[T](deque: var Deque[T]): int</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="sq: len[T](list: var SomeList[T]): int" href="stones/sq.html#len%2CSomeList%5BT%5D">sq: len[T](list: var SomeList[T]): int</a></li>
           </ul></dd>
 <dt><a name="LOG" href="#LOG"><span>LOG:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -235,6 +279,38 @@ function main() {
 <li><a class="reference external"
           data-doc-search-tag="cases: pascalCase(s: string; acronyms: HashSet[string] = acronyms): string" href="stones/cases.html#pascalCase%2Cstring%2CHashSet%5Bstring%5D">cases: pascalCase(s: string; acronyms: HashSet[string] = acronyms): string</a></li>
           </ul></dd>
+<dt><a name="peek" href="#peek"><span>peek:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="sq: peek[T](list: var SomeList[T]): (SinglyLinkedNode[T])" href="stones/sq.html#peek%2CSomeList%5BT%5D">sq: peek[T](list: var SomeList[T]): (SinglyLinkedNode[T])</a></li>
+          </ul></dd>
+<dt><a name="peekFront" href="#peekFront"><span>peekFront:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="deque: peekFront[T](deque: var Deque[T]): (DoublyLinkedNode[T])" href="stones/deque.html#peekFront%2CDeque%5BT%5D">deque: peekFront[T](deque: var Deque[T]): (DoublyLinkedNode[T])</a></li>
+          </ul></dd>
+<dt><a name="peekRear" href="#peekRear"><span>peekRear:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="deque: peekRear[T](deque: var Deque[T]): (DoublyLinkedNode[T])" href="stones/deque.html#peekRear%2CDeque%5BT%5D">deque: peekRear[T](deque: var Deque[T]): (DoublyLinkedNode[T])</a></li>
+          </ul></dd>
+<dt><a name="pop" href="#pop"><span>pop:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="sq: pop[T](list: var SomeList[T]): (SinglyLinkedNode[T])" href="stones/sq.html#pop%2CSomeList%5BT%5D">sq: pop[T](list: var SomeList[T]): (SinglyLinkedNode[T])</a></li>
+          </ul></dd>
+<dt><a name="popFront" href="#popFront"><span>popFront:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="deque: popFront[T](deque: var Deque[T]): (DoublyLinkedNode[T])" href="stones/deque.html#popFront%2CDeque%5BT%5D">deque: popFront[T](deque: var Deque[T]): (DoublyLinkedNode[T])</a></li>
+          </ul></dd>
+<dt><a name="popRear" href="#popRear"><span>popRear:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="deque: popRear[T](deque: var Deque[T]): (DoublyLinkedNode[T])" href="stones/deque.html#popRear%2CDeque%5BT%5D">deque: popRear[T](deque: var Deque[T]): (DoublyLinkedNode[T])</a></li>
+          </ul></dd>
+<dt><a name="Queue" href="#Queue"><span>Queue:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="sq: Queue" href="stones/sq.html#Queue">sq: Queue</a></li>
+          </ul></dd>
+<dt><a name="randString" href="#randString"><span>randString:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="rand: randString(length: int): string" href="stones/rand.html#randString%2Cint">rand: randString(length: int): string</a></li>
+          </ul></dd>
 <dt><a name="replace" href="#replace"><span>replace:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="strlib: replace(input: var seq[char]; replacements: Table[string, string]): void" href="stones/strlib.html#replace%2Cseq%5Bchar%5D%2CTable%5Bstring%2Cstring%5D">strlib: replace(input: var seq[char]; replacements: Table[string, string]): void</a></li>
@@ -260,6 +336,10 @@ function main() {
 <dt><a name="split" href="#split"><span>split:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="strlib: split(str: string; open: char; close: char; separator: string): seq[string]" href="stones/strlib.html#split%2Cstring%2Cchar%2Cchar%2Cstring">strlib: split(str: string; open: char; close: char; separator: string): seq[string]</a></li>
+          </ul></dd>
+<dt><a name="Stack" href="#Stack"><span>Stack:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="sq: Stack" href="stones/sq.html#Stack">sq: Stack</a></li>
           </ul></dd>
 <dt><a name="substr" href="#substr"><span>substr:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -318,7 +398,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-06-29 06:04:21 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-06-29 06:41:52 UTC</small>
       </div>
     </div>
   </div>
