@@ -7,6 +7,7 @@ substr	stones/strlib.html#substr,string,int,int	strlib: substr(s: var string; fi
 trim	stones/strlib.html#trim,string	strlib: trim(s: var string): void	
 replace	stones/strlib.html#replace,seq[char],Table[string,string]	strlib: replace(input: var seq[char]; replacements: Table[string, string]): void	
 replace	stones/strlib.html#replace,string,Table[string,string]	strlib: replace(s: string; replacements: Table[string, string]): string	
+`$`	stones/strlib.html#$,seq[char]	strlib: `$`(input: seq[char]): string	
 seqCharToString	stones/strlib.html#seqCharToString,seq[char]	strlib: seqCharToString(input: seq[char]): string	
 width	stones/strlib.html#width,seq[string]	strlib: width(strs: seq[string]): seq[int]	
 find	stones/strlib.html#find,string,char,char,string	strlib: find(str: string; open: char; close: char; toFind: string): seq[int]	
