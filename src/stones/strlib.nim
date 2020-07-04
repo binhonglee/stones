@@ -5,10 +5,10 @@ import sets
 import tables
 
 type
-  InvalidIndexError* = object of Exception
+  InvalidIndexError* = object of IOError
 
 type
-  NotADigitError* = object of Exception
+  NotADigitError* = object of ValueError
 
 proc count*(word: string, chars: HashSet[char]): Table[char, int] =
   ## Similar to `count` in `strutil`
@@ -136,13 +136,18 @@ proc replace*(s: string, replacements: Table[string, string]): string =
     inc(i)
   result &= system.substr(s, prev, i - 1)
 
-proc seqCharToString*(input: seq[char]): string =
+proc `$`*(input: seq[char]): string =
   ## Converts a `seq[char]` to `string`
   result = newString(len(input))
   var i = 0
   for c in input:
     result[i] = c
     inc(i)
+
+proc seqCharToString*(input: seq[char]): string {.deprecated:
+  "Use `$` instead.".}=
+  ## Use `$ proc <#$,seq[char]>`_ instead
+  $input
 
 proc width*(strs: seq[string]): seq[int] =
   ## A `seq` of `str.len()`.

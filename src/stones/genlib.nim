@@ -2,10 +2,10 @@ import sets
 import tables
 
 type
-  ConflictingValueError* = object of Exception
+  ConflictingValueError* = object of ValueError
 
 type
-  DuplicateKeyError* = object of Exception
+  DuplicateKeyError* = object of ValueError
 
 # START referenced from https://forum.nim-lang.org/t/3342
 type
@@ -27,10 +27,28 @@ template `?`*[T](cond: bool; p: Conditions[T]): T =
   (if cond: p.y else: p.n)
 # END referenced from https://forum.nim-lang.org/t/3342
 
+proc checkNil(x: int): bool = false
+proc checkNil(x: string): bool = false
+proc checkNil[T](x: T): bool = isNil(x)
+
 template `??`*[T](x: T, y: T): T =
   ## Assign the value on the right hand side when the value on the left hand
   ## side is `nil`.
-  (if isNil(x): y else: x)
+  ## 
+  ## _Note: types like `int`, `string`, `bool` are never `nil`_
+  runnableExamples:
+    type
+      TestObj = ref object of RootObj
+        x: int
+
+    var a: TestObj
+    var b = TestObj()
+    b.x = 10
+
+    doAssert isNil(a) == true
+    doAssert isNil(b) == false
+    doAssert (a ?? b).x == b.x
+  checkNil(x) ? y | x
 
 proc merge*[A, B](
   first: var Table[A, B],

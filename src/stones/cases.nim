@@ -5,7 +5,7 @@ import sets
 import tables
 
 type
-  UnsupportedCharacterError* = object of Exception
+  UnsupportedCharacterError* = object of ValueError
 
 var acronyms: HashSet[string] = initHashSet[string]()
 
