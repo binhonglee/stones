@@ -1,5 +1,7 @@
 from terminal import ansiForegroundColorCode, ForegroundColor
 
+# This is intentionally vague and should be overwriten if possible
+{. warning[InheritFromException]:off .}
 type
   GenericError* = object of Exception
     ## Default exception to throw if there is no error passed in with a `FATAL` call.

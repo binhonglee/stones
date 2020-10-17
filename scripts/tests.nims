@@ -6,6 +6,7 @@ mode = ScriptMode.Verbose
 const prefix = 't'
 const suffix = ".nim"
 const outDir = "bin/"
+const testDir = "tests"
 
 proc genRun(): void =
   if lastPathPart(getCurrentDir()) != "stones":
@@ -13,14 +14,14 @@ proc genRun(): void =
     echo "Exiting..."
     return
 
-  let testFiles: seq[string] = listFiles("test")
+  let testFiles: seq[string] = listFiles(testDir)
   var testBinaries: seq[string] = newSeq[string](testFiles.len())
   var i: int = 0
   for file in testFiles:
     var s: string = lastPathPart(file)
     if s.len() > 0 and s.startsWith(prefix) and s.endsWith(suffix):
       s.setLen(s.len() - suffix.len())
-      exec "nim c --verbosity:0 --outDir:" & outDir & " test/" & s
+      exec "nim c --verbosity:0 --outDir:" & outDir & " " & testDir & "/" & s
       testBinaries[i] = s
       inc(i)
 
