@@ -13,4 +13,4 @@ task docs, "Build docs":
   exec "./scripts/docs.nims"
 
 task test, "Runs the test suite":
-  exec "./scripts/test.nims"
+  exec "./scripts/tests.nims"

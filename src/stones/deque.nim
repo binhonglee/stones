@@ -1,4 +1,5 @@
 import lists
+import collections
 
 ## The underlying differences between this and the official implementation
 ## `here <https://nim-lang.org/docs/deques.html>`_ is that this is implemented
@@ -12,6 +13,12 @@ type
 proc initDeque*[T](): Deque[T] =
   new(result)
   result.size = 0
+
+proc initDeque*[T](collection: Collection[T]): Deque[T] =
+  new(result)
+  result.size = 0
+  for e in collection:
+    result.addRear(e)
 
 proc addFront*[T](deque: var Deque[T], node: DoublyLinkedNode[T]) =
   deque.dll.prepend(node)
