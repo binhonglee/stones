@@ -1,0 +1,5 @@
+Collection	stones/collections.html#Collection	collections: Collection	
+OutOfRangeError	stones/collections.html#OutOfRangeError	collections: OutOfRangeError	
+fillCollection	stones/collections.html#fillCollection,Collection[T],Collection[T]	collections: fillCollection[T](collection: var Collection[T]; toAdd: Collection[T]): void	
+sum	stones/collections.html#sum,Collection[int]	collections: sum[int](collection: Collection[int]): int	
+sort	stones/collections.html#sort,Collection[int]	collections: sort[int](collection: Collection[int]): seq[int]	

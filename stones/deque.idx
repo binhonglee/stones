@@ -1,5 +1,6 @@
 Deque	stones/deque.html#Deque	deque: Deque	
 initDeque	stones/deque.html#initDeque	deque: initDeque[T](): Deque[T]	
+initDeque	stones/deque.html#initDeque,Collection[T]	deque: initDeque[T](collection: Collection[T]): Deque[T]	
 addFront	stones/deque.html#addFront,Deque[T],DoublyLinkedNode[T]	deque: addFront[T](deque: var Deque[T]; node: DoublyLinkedNode[T])	
 addFront	stones/deque.html#addFront,Deque[T],T	deque: addFront[T](deque: var Deque[T]; value: T)	
 addRear	stones/deque.html#addRear,Deque[T],DoublyLinkedNode[T]	deque: addRear[T](deque: var Deque[T]; node: DoublyLinkedNode[T])	

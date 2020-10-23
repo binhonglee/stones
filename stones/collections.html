@@ -17,7 +17,7 @@
 <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600' rel='stylesheet' type='text/css'/>
 
 <!-- CSS -->
-<title>stones/log</title>
+<title>stones/collections</title>
 <link rel="stylesheet" type="text/css" href="../nimdoc.out.css">
 
 <script type="text/javascript" src="dochack.js"></script>
@@ -71,7 +71,7 @@ function main() {
 <body onload="main()">
 <div class="document" id="documentId">
   <div class="container">
-    <h1 class="title">stones/log</h1>
+    <h1 class="title">stones/collections</h1>
     <div class="row">
   <div class="three columns">
   <div class="theme-switch-wrapper">
@@ -100,21 +100,22 @@ function main() {
 <li>
   <a class="reference reference-toplevel" href="#7" id="57">Types</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#GenericError"
-    title="GenericError = object of Exception"><wbr />Generic<wbr />Error<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#AlertLevel"
-    title="AlertLevel = enum
-  FATAL = 0, ERROR = 1, SUCCESS = 2, DEPRECATED = 3, WARNING = 4, INFO = 5, DEBUG = 6"><wbr />Alert<wbr />Level<span class="attachedType"></span></a></li>
+      <li><a class="reference" href="#Collection"
+    title="Collection[T] = seq[T] | varargs[T] | openArray[T]"><wbr />Collection<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#OutOfRangeError"
+    title="OutOfRangeError = object of IOError"><wbr />Out<wbr />Of<wbr />Range<wbr />Error<span class="attachedType"></span></a></li>
 
   </ul>
 </li>
 <li>
   <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#LOG%2CAlertLevel%2Cstring%2Ctypedesc"
-    title="LOG(level: AlertLevel; message: string; exception: typedesc = GenericError): void"><wbr />LOG<span class="attachedType">AlertLevel</span></a></li>
-  <li><a class="reference" href="#setLevel%2CAlertLevel"
-    title="setLevel(level: AlertLevel): void"><wbr />set<wbr />Level<span class="attachedType">AlertLevel</span></a></li>
+      <li><a class="reference" href="#fillCollection%2CCollection%5BT%5D%2CCollection%5BT%5D"
+    title="fillCollection[T](collection: var Collection[T]; toAdd: Collection[T]): void"><wbr />fill<wbr />Collection<span class="attachedType">Collection</span></a></li>
+  <li><a class="reference" href="#sum%2CCollection%5Bint%5D"
+    title="sum[int](collection: Collection[int]): int"><wbr />sum<span class="attachedType">Collection</span></a></li>
+  <li><a class="reference" href="#sort%2CCollection%5Bint%5D"
+    title="sort[int](collection: Collection[int]): seq[int]"><wbr />sort<span class="attachedType">Collection</span></a></li>
 
   </ul>
 </li>
@@ -129,28 +130,26 @@ function main() {
   <div class="section" id="7">
 <h1><a class="toc-backref" href="#7">Types</a></h1>
 <dl class="item">
-<a id="GenericError"></a>
-<dt><pre><a href="log.html#GenericError"><span class="Identifier">GenericError</span></a> <span class="Other">=</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">Exception</span>
-  </pre></dt>
+<a id="Collection"></a>
+<dt><pre><a href="collections.html#Collection"><span class="Identifier">Collection</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span> <span class="Operator">|</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span> <span class="Operator">|</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span></pre></dt>
 <dd>
 
-Default exception to throw if there is no error passed in with a <tt class="docutils literal"><span class="pre">FATAL</span></tt> call.
+
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/devel/src/stones/log.nim#L6"
+href="https://github.com/binhonglee/stones/tree/devel/src/stones/collections.nim#L4"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/log.nim#L6" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/collections.nim#L4" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
-<a id="AlertLevel"></a>
-<dt><pre><a href="log.html#AlertLevel"><span class="Identifier">AlertLevel</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
-  <span class="Identifier">FATAL</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="Identifier">ERROR</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">,</span> <span class="Identifier">SUCCESS</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">DEPRECATED</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">,</span> <span class="Identifier">WARNING</span> <span class="Other">=</span> <span class="DecNumber">4</span><span class="Other">,</span> <span class="Identifier">INFO</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">,</span> <span class="Identifier">DEBUG</span> <span class="Other">=</span> <span class="DecNumber">6</span></pre></dt>
+<a id="OutOfRangeError"></a>
+<dt><pre><a href="collections.html#OutOfRangeError"><span class="Identifier">OutOfRangeError</span></a> <span class="Other">=</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">IOError</span></pre></dt>
 <dd>
 
-Level of noise to be logged.
+
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/devel/src/stones/log.nim#L10"
+href="https://github.com/binhonglee/stones/tree/devel/src/stones/collections.nim#L7"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/log.nim#L10" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/collections.nim#L7" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -158,26 +157,37 @@ class="link-seesrc" target="_blank">Source</a>
 <div class="section" id="12">
 <h1><a class="toc-backref" href="#12">Procs</a></h1>
 <dl class="item">
-<a id="LOG,AlertLevel,string,typedesc"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#LOG%2CAlertLevel%2Cstring%2Ctypedesc"><span class="Identifier">LOG</span></a><span class="Other">(</span><span class="Identifier">level</span><span class="Other">:</span> <a href="log.html#AlertLevel"><span class="Identifier">AlertLevel</span></a><span class="Other">;</span> <span class="Identifier">message</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">exception</span><span class="Other">:</span> <span class="Identifier">typedesc</span> <span class="Other">=</span> <span class="Identifier">GenericError</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span></pre></dt>
+<a id="fillCollection,Collection[T],Collection[T]"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#fillCollection%2CCollection%5BT%5D%2CCollection%5BT%5D"><span class="Identifier">fillCollection</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">collection</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="collections.html#Collection"><span class="Identifier">Collection</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">toAdd</span><span class="Other">:</span> <a href="collections.html#Collection"><span class="Identifier">Collection</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span></pre></dt>
 <dd>
 
-Log message (and throw error if <tt class="docutils literal"><span class="pre">level</span></tt> is <tt class="docutils literal"><span class="pre">FATAL</span></tt>).
+
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/devel/src/stones/log.nim#L51"
+href="https://github.com/binhonglee/stones/tree/devel/src/stones/collections.nim#L9"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/log.nim#L51" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/collections.nim#L9" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
-<a id="setLevel,AlertLevel"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#setLevel%2CAlertLevel"><span class="Identifier">setLevel</span></a><span class="Other">(</span><span class="Identifier">level</span><span class="Other">:</span> <a href="log.html#AlertLevel"><span class="Identifier">AlertLevel</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">GenericError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="sum,Collection[int]"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#sum%2CCollection%5Bint%5D"><span class="Identifier">sum</span></a><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">collection</span><span class="Other">:</span> <a href="collections.html#Collection"><span class="Identifier">Collection</span></a><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
 
-Set global <tt class="docutils literal"><span class="pre">AlertLevel</span></tt> (if <tt class="docutils literal"><span class="pre">LOG()</span></tt> level is lower than the level set here, it will be ignored.)
+
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/devel/src/stones/log.nim#L58"
+href="https://github.com/binhonglee/stones/tree/devel/src/stones/collections.nim#L16"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/log.nim#L58" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/collections.nim#L16" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<a id="sort,Collection[int]"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#sort%2CCollection%5Bint%5D"><span class="Identifier">sort</span></a><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">collection</span><span class="Other">:</span> <a href="collections.html#Collection"><span class="Identifier">Collection</span></a><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/binhonglee/stones/tree/devel/src/stones/collections.nim#L21"
+class="link-seesrc" target="_blank">Source</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/collections.nim#L21" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -190,7 +200,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-10-23 07:29:04 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-10-23 07:29:03 UTC</small>
       </div>
     </div>
   </div>

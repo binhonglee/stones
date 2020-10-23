@@ -72,7 +72,7 @@ function main() {
 <div class="document" id="documentId">
   <div class="container">
     <h1 class="title">Index</h1>
-    Modules: <a href="stones/cases.html">stones/cases</a>, <a href="stones/deque.html">stones/deque</a>, <a href="stones/genlib.html">stones/genlib</a>, <a href="stones/log.html">stones/log</a>, <a href="stones/rand.html">stones/rand</a>, <a href="stones/sq.html">stones/sq</a>, <a href="stones/strlib.html">stones/strlib</a>.<br/><p /><h2>API symbols</h2>
+    Modules: <a href="stones/cases.html">stones/cases</a>, <a href="stones/collections.html">stones/collections</a>, <a href="stones/deque.html">stones/deque</a>, <a href="stones/genlib.html">stones/genlib</a>, <a href="stones/log.html">stones/log</a>, <a href="stones/rand.html">stones/rand</a>, <a href="stones/sq.html">stones/sq</a>, <a href="stones/strlib.html">stones/strlib</a>.<br/><p /><h2>API symbols</h2>
 <dl><dt><a name="%60%24%60" href="#%60%24%60"><span>`$`:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="strlib: `$`(input: seq[char]): string" href="stones/strlib.html#%24%2Cseq%5Bchar%5D">strlib: `$`(input: seq[char]): string</a></li>
@@ -133,6 +133,10 @@ function main() {
 <li><a class="reference external"
           data-doc-search-tag="cases: Case" href="stones/cases.html#Case">cases: Case</a></li>
           </ul></dd>
+<dt><a name="Collection" href="#Collection"><span>Collection:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="collections: Collection" href="stones/collections.html#Collection">collections: Collection</a></li>
+          </ul></dd>
 <dt><a name="ConflictingValueError" href="#ConflictingValueError"><span>ConflictingValueError:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="genlib: ConflictingValueError" href="stones/genlib.html#ConflictingValueError">genlib: ConflictingValueError</a></li>
@@ -172,6 +176,10 @@ function main() {
 <dt><a name="FATAL" href="#FATAL"><span>FATAL:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="AlertLevel.FATAL" href="stones/log.html#FATAL">AlertLevel.FATAL</a></li>
+          </ul></dd>
+<dt><a name="fillCollection" href="#fillCollection"><span>fillCollection:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="collections: fillCollection[T](collection: var Collection[T]; toAdd: Collection[T]): void" href="stones/collections.html#fillCollection%2CCollection%5BT%5D%2CCollection%5BT%5D">collections: fillCollection[T](collection: var Collection[T]; toAdd: Collection[T]): void</a></li>
           </ul></dd>
 <dt><a name="find" href="#find"><span>find:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -220,14 +228,20 @@ function main() {
 <dt><a name="initDeque" href="#initDeque"><span>initDeque:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="deque: initDeque[T](): Deque[T]" href="stones/deque.html#initDeque">deque: initDeque[T](): Deque[T]</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="deque: initDeque[T](collection: Collection[T]): Deque[T]" href="stones/deque.html#initDeque%2CCollection%5BT%5D">deque: initDeque[T](collection: Collection[T]): Deque[T]</a></li>
           </ul></dd>
 <dt><a name="initQueue" href="#initQueue"><span>initQueue:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="sq: initQueue[T](): Queue[T]" href="stones/sq.html#initQueue">sq: initQueue[T](): Queue[T]</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="sq: initQueue[T](collection: Collection[T]): Queue[T]" href="stones/sq.html#initQueue%2CCollection%5BT%5D">sq: initQueue[T](collection: Collection[T]): Queue[T]</a></li>
           </ul></dd>
 <dt><a name="initStack" href="#initStack"><span>initStack:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="sq: initStack[T](): Stack[T]" href="stones/sq.html#initStack">sq: initStack[T](): Stack[T]</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="sq: initStack[T](collection: Collection[T]): Stack[T]" href="stones/sq.html#initStack%2CCollection%5BT%5D">sq: initStack[T](collection: Collection[T]): Stack[T]</a></li>
           </ul></dd>
 <dt><a name="InvalidIndexError" href="#InvalidIndexError"><span>InvalidIndexError:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -268,6 +282,10 @@ function main() {
 <dt><a name="NotADigitError" href="#NotADigitError"><span>NotADigitError:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="strlib: NotADigitError" href="stones/strlib.html#NotADigitError">strlib: NotADigitError</a></li>
+          </ul></dd>
+<dt><a name="OutOfRangeError" href="#OutOfRangeError"><span>OutOfRangeError:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="collections: OutOfRangeError" href="stones/collections.html#OutOfRangeError">collections: OutOfRangeError</a></li>
           </ul></dd>
 <dt><a name="parseInt" href="#parseInt"><span>parseInt:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -337,6 +355,10 @@ function main() {
 <li><a class="reference external"
           data-doc-search-tag="Case.Snake" href="stones/cases.html#Snake">Case.Snake</a></li>
           </ul></dd>
+<dt><a name="sort" href="#sort"><span>sort:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="collections: sort[int](collection: Collection[int]): seq[int]" href="stones/collections.html#sort%2CCollection%5Bint%5D">collections: sort[int](collection: Collection[int]): seq[int]</a></li>
+          </ul></dd>
 <dt><a name="split" href="#split"><span>split:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="strlib: split(str: string; open: char; close: char; separator: string): seq[string]" href="stones/strlib.html#split%2Cstring%2Cchar%2Cchar%2Cstring">strlib: split(str: string; open: char; close: char; separator: string): seq[string]</a></li>
@@ -352,6 +374,10 @@ function main() {
 <dt><a name="SUCCESS" href="#SUCCESS"><span>SUCCESS:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="AlertLevel.SUCCESS" href="stones/log.html#SUCCESS">AlertLevel.SUCCESS</a></li>
+          </ul></dd>
+<dt><a name="sum" href="#sum"><span>sum:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="collections: sum[int](collection: Collection[int]): int" href="stones/collections.html#sum%2CCollection%5Bint%5D">collections: sum[int](collection: Collection[int]): int</a></li>
           </ul></dd>
 <dt><a name="toCamelCase" href="#toCamelCase"><span>toCamelCase:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -402,7 +428,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-07-04 03:02:13 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-10-23 07:29:05 UTC</small>
       </div>
     </div>
   </div>

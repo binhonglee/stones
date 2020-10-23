@@ -98,6 +98,12 @@ function main() {
   </div>
   <ul class="simple simple-toc" id="toc-list">
 <li>
+  <a class="reference reference-toplevel" href="#6" id="56">Imports</a>
+  <ul class="simple simple-toc-section">
+    
+  </ul>
+</li>
+<li>
   <a class="reference reference-toplevel" href="#7" id="57">Types</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#Deque"
@@ -112,6 +118,8 @@ function main() {
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#initDeque"
     title="initDeque[T](): Deque[T]"><wbr />init<wbr />Deque<span class="attachedType">Deque</span></a></li>
+  <li><a class="reference" href="#initDeque%2CCollection%5BT%5D"
+    title="initDeque[T](collection: Collection[T]): Deque[T]"><wbr />init<wbr />Deque<span class="attachedType">Deque</span></a></li>
   <li><a class="reference" href="#addFront%2CDeque%5BT%5D%2CDoublyLinkedNode%5BT%5D"
     title="addFront[T](deque: var Deque[T]; node: DoublyLinkedNode[T])"><wbr />add<wbr />Front<span class="attachedType">Deque</span></a></li>
   <li><a class="reference" href="#addFront%2CDeque%5BT%5D%2CT"
@@ -141,7 +149,12 @@ function main() {
   <div id="tocRoot"></div>
   
   <p class="module-desc">The underlying differences between this and the official implementation <a class="reference external" href="https://nim-lang.org/docs/deques.html">here</a> is that this is implemented using a <tt class="docutils literal"><span class="pre">DoublyLinkedList</span></tt> instead of a <tt class="docutils literal"><span class="pre">seq</span></tt></p>
-  <div class="section" id="7">
+  <div class="section" id="6">
+<h1><a class="toc-backref" href="#6">Imports</a></h1>
+<dl class="item">
+<a class="reference external" href="collections.html">collections</a>
+</dl></div>
+<div class="section" id="7">
 <h1><a class="toc-backref" href="#7">Types</a></h1>
 <dl class="item">
 <a id="Deque"></a>
@@ -153,9 +166,9 @@ function main() {
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/devel/src/stones/deque.nim#L8"
+href="https://github.com/binhonglee/stones/tree/devel/src/stones/deque.nim#L9"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/deque.nim#L8" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/deque.nim#L9" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -169,35 +182,24 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/devel/src/stones/deque.nim#L12"
+href="https://github.com/binhonglee/stones/tree/devel/src/stones/deque.nim#L13"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/deque.nim#L12" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/deque.nim#L13" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<a id="initDeque,Collection[T]"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#initDeque%2CCollection%5BT%5D"><span class="Identifier">initDeque</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">collection</span><span class="Other">:</span> <a href="collections.html#Collection"><span class="Identifier">Collection</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <a href="deque.html#Deque"><span class="Identifier">Deque</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/binhonglee/stones/tree/devel/src/stones/deque.nim#L17"
+class="link-seesrc" target="_blank">Source</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/deque.nim#L17" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="addFront,Deque[T],DoublyLinkedNode[T]"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#addFront%2CDeque%5BT%5D%2CDoublyLinkedNode%5BT%5D"><span class="Identifier">addFront</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">deque</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="deque.html#Deque"><span class="Identifier">Deque</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">node</span><span class="Other">:</span> <span class="Identifier">DoublyLinkedNode</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/devel/src/stones/deque.nim#L16"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/deque.nim#L16" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-<a id="addFront,Deque[T],T"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#addFront%2CDeque%5BT%5D%2CT"><span class="Identifier">addFront</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">deque</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="deque.html#Deque"><span class="Identifier">Deque</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">value</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/devel/src/stones/deque.nim#L20"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/deque.nim#L20" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-<a id="addRear,Deque[T],DoublyLinkedNode[T]"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#addRear%2CDeque%5BT%5D%2CDoublyLinkedNode%5BT%5D"><span class="Identifier">addRear</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">deque</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="deque.html#Deque"><span class="Identifier">Deque</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">node</span><span class="Other">:</span> <span class="Identifier">DoublyLinkedNode</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -207,8 +209,8 @@ class="link-seesrc" target="_blank">Source</a>
 <a href="https://github.com/binhonglee/stones/edit/devel/src/stones/deque.nim#L23" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
-<a id="addRear,Deque[T],T"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#addRear%2CDeque%5BT%5D%2CT"><span class="Identifier">addRear</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">deque</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="deque.html#Deque"><span class="Identifier">Deque</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">value</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
+<a id="addFront,Deque[T],T"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#addFront%2CDeque%5BT%5D%2CT"><span class="Identifier">addFront</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">deque</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="deque.html#Deque"><span class="Identifier">Deque</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">value</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -218,8 +220,8 @@ class="link-seesrc" target="_blank">Source</a>
 <a href="https://github.com/binhonglee/stones/edit/devel/src/stones/deque.nim#L27" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
-<a id="peekFront,Deque[T]"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#peekFront%2CDeque%5BT%5D"><span class="Identifier">peekFront</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">deque</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="deque.html#Deque"><span class="Identifier">Deque</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Other">(</span><span class="Identifier">DoublyLinkedNode</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
+<a id="addRear,Deque[T],DoublyLinkedNode[T]"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#addRear%2CDeque%5BT%5D%2CDoublyLinkedNode%5BT%5D"><span class="Identifier">addRear</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">deque</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="deque.html#Deque"><span class="Identifier">Deque</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">node</span><span class="Other">:</span> <span class="Identifier">DoublyLinkedNode</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -229,15 +231,37 @@ class="link-seesrc" target="_blank">Source</a>
 <a href="https://github.com/binhonglee/stones/edit/devel/src/stones/deque.nim#L30" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
+<a id="addRear,Deque[T],T"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#addRear%2CDeque%5BT%5D%2CT"><span class="Identifier">addRear</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">deque</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="deque.html#Deque"><span class="Identifier">Deque</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">value</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/binhonglee/stones/tree/devel/src/stones/deque.nim#L34"
+class="link-seesrc" target="_blank">Source</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/deque.nim#L34" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<a id="peekFront,Deque[T]"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#peekFront%2CDeque%5BT%5D"><span class="Identifier">peekFront</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">deque</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="deque.html#Deque"><span class="Identifier">Deque</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Other">(</span><span class="Identifier">DoublyLinkedNode</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/binhonglee/stones/tree/devel/src/stones/deque.nim#L37"
+class="link-seesrc" target="_blank">Source</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/deque.nim#L37" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
 <a id="peekRear,Deque[T]"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#peekRear%2CDeque%5BT%5D"><span class="Identifier">peekRear</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">deque</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="deque.html#Deque"><span class="Identifier">Deque</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Other">(</span><span class="Identifier">DoublyLinkedNode</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/devel/src/stones/deque.nim#L33"
+href="https://github.com/binhonglee/stones/tree/devel/src/stones/deque.nim#L40"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/deque.nim#L33" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/deque.nim#L40" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="popFront,Deque[T]"></a>
@@ -246,9 +270,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/devel/src/stones/deque.nim#L36"
+href="https://github.com/binhonglee/stones/tree/devel/src/stones/deque.nim#L43"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/deque.nim#L36" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/deque.nim#L43" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="popRear,Deque[T]"></a>
@@ -257,9 +281,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/devel/src/stones/deque.nim#L42"
+href="https://github.com/binhonglee/stones/tree/devel/src/stones/deque.nim#L49"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/deque.nim#L42" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/deque.nim#L49" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="len,Deque[T]"></a>
@@ -268,9 +292,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/binhonglee/stones/tree/devel/src/stones/deque.nim#L48"
+href="https://github.com/binhonglee/stones/tree/devel/src/stones/deque.nim#L55"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/deque.nim#L48" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/binhonglee/stones/edit/devel/src/stones/deque.nim#L55" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -283,7 +307,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-07-04 03:02:10 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-10-23 07:29:03 UTC</small>
       </div>
     </div>
   </div>
