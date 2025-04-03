@@ -76,22 +76,22 @@ suite "merge[A, B]()":
 
   test "Merge conflict without ignoreDup":
     var temp1 = t1
-    temp1.add("z", "y")
+    temp1["z"] = "y"
     expect(DuplicateKeyError):
       temp1.merge(t2, false)
 
     var temp2 = t1
-    temp2.add("y", "a")
+    temp2["y"] = "a"
     expect(ConflictingValueError):
       temp2.merge(t2, false)
 
   test "Merge conflict with ignoreDup":
     var temp1 = t1
-    temp1.add("z", "y")
+    temp1["z"] = "y"
     temp1.merge(t2, true)
 
     var temp2 = t1
-    temp2.add("y", "a")
+    temp2["y"] = "a"
     expect(ConflictingValueError):
       temp2.merge(t2, true)
 

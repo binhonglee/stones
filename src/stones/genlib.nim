@@ -72,7 +72,7 @@ proc merge*[A, B](
           "Unable to join tables with duplicate key."
         )
     else:
-      first.add(key, second[key])
+      first[key] = second[key]
 
 proc merge*[T](first: var HashSet[T], second: HashSet[T]): void {.deprecated:
   "`sets` already comes with a function that does the exact same thing.".} =

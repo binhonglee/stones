@@ -82,7 +82,7 @@ proc fromPascalCase*(s: string, acronyms: HashSet[string] = acronyms): string =
     inc(i)
 
   if i >= 0:
-    result.delete(0, i)
+    delete(result, 0..i)
 
 proc toPascalCase*(s: string, acronyms: HashSet[string] = acronyms): string =
   ## Converts `snake_case` string to `PascalCase`.
@@ -238,11 +238,11 @@ proc allCases*(
     t = fromUpperCase(s)
 
   result = initTable[Case, string]()
-  result.add(Default, s)
-  result.add(Camel, toCamelCase(t, acronyms))
-  result.add(Kebab, toKebabCase(t))
-  result.add(Lower, toLowerCase(t))
-  result.add(Pascal, toPascalCase(t, acronyms))
-  result.add(Snake, t)
-  result.add(Upper, toUpperCase(t))
+  result[Default] = s
+  result[Camel] = toCamelCase(t, acronyms)
+  result[Kebab] = toKebabCase(t)
+  result[Lower] = toLowerCase(t)
+  result[Pascal] = toPascalCase(t, acronyms)
+  result[Snake] = t
+  result[Upper] = toUpperCase(t)
 

@@ -48,10 +48,10 @@ proc add*[T](queue: var Queue[T], node: SinglyLinkedNode[T]): void =
 proc add*[T](queue: var Queue[T], value: T): void =
   queue.add(newSinglyLinkedNode(value))
 
-proc peek*[T](list: var SomeList[T]): <//>(SinglyLinkedNode[T]) =
+proc peek*[T](list: var SomeList[T]): SinglyLinkedNode[T] =
   result = list.sll.head
 
-proc pop*[T](list: var SomeList[T]): <//>(SinglyLinkedNode[T]) =
+proc pop*[T](list: var SomeList[T]): SinglyLinkedNode[T] =
   result = peek(list)
   list.sll.head = list.sll.head.next
   dec(list.size)

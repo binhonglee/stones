@@ -19,7 +19,7 @@ proc count*(word: string, chars: HashSet[char]): Table[char, int] =
   for c in word:
     if c in chars:
       if not result.hasKey(c):
-        result.add(c, 1)
+        result[c] = 1
       else:
         inc(result[c])
 
@@ -85,7 +85,7 @@ proc replace*(input: var seq[char], replacements: Table[string, string]): void =
   var firstChars: Table[char, HashSet[string]] = initTable[char, HashSet[string]]()
   for word in replacements.keys:
     if not firstChars.hasKey(word[0]):
-      firstChars.add(word[0], initHashSet[string]())
+      firstChars[word[0]] = initHashSet[string]()
     firstChars[word[0]].incl(word)
   while i < input.len:
     if firstChars.hasKey(input[i]):
@@ -100,7 +100,7 @@ proc replace*(input: var seq[char], replacements: Table[string, string]): void =
 
         if word.len() - j == 0 and same:
           dec(j)
-          input.delete(i, i + j)
+          delete(input, i..(i + j))
           input.insert(toSeq(replacements[word].items), i)
     inc(i)
 
@@ -115,7 +115,7 @@ proc replace*(s: string, replacements: Table[string, string]): string =
 
   for word in replacements.keys:
     if not firstChars.hasKey(word[0]):
-      firstChars.add(word[0], initHashSet[string]())
+      firstChars[word[0]] = initHashSet[string]()
     firstChars[word[0]].incl(word)
 
   while i < s.len():

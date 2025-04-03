@@ -34,19 +34,19 @@ proc addRear*[T](deque: var Deque[T], node: DoublyLinkedNode[T]) =
 proc addRear*[T](deque: var Deque[T], value: T) =
   deque.addRear(newDoublyLinkedNode(value))
 
-proc peekFront*[T](deque: var Deque[T]): <//>(DoublyLinkedNode[T]) =
+proc peekFront*[T](deque: var Deque[T]): DoublyLinkedNode[T] =
   result = deque.dll.head
 
-proc peekRear*[T](deque: var Deque[T]): <//>(DoublyLinkedNode[T]) =
+proc peekRear*[T](deque: var Deque[T]): DoublyLinkedNode[T] =
   result = deque.dll.tail
 
-proc popFront*[T](deque: var Deque[T]): <//>(DoublyLinkedNode[T]) =
+proc popFront*[T](deque: var Deque[T]): DoublyLinkedNode[T] =
   result = deque.peekFront()
   if deque.size > 0:
     deque.dll.remove(deque.dll.head)
     dec(deque.size)
 
-proc popRear*[T](deque: var Deque[T]): <//>(DoublyLinkedNode[T]) =
+proc popRear*[T](deque: var Deque[T]): DoublyLinkedNode[T] =
   result = deque.peekRear()
   if deque.size > 0:
     deque.dll.remove(deque.dll.tail)

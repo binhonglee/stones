@@ -1,0 +1,74 @@
+name: CI
+on: [push]
+env:
+  CHOOSENIM_NO_ANALYTICS: 1
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        nim-version: [2.2.0, stable]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Cache choosenim
+      id: cache-choosenim
+      uses: actions/cache@v4
+      with:
+        path: ~/.choosenim
+        key: ${{ runner.os }}-choosenim
+    - name: Cache nimble
+      id: cache-nimble
+      uses: actions/cache@v4
+      with:
+        path: ~/.nimble
+        key: ${{ runner.os }}-nimble
+    - name: Install choosenim / Nim
+      if: steps.cache-choosenim.outputs.cache-hit != 'true' || steps.cache-nimble.outputs.cache-hit != 'true'
+      run: |
+        curl https://nim-lang.org/choosenim/init.sh -sSf > init.sh
+        sh init.sh -y
+    - name: Set nimble path
+      run: echo "$HOME/.nimble/bin" >> $GITHUB_PATH
+    - name: Update choosenim and select version
+      run: |
+        choosenim update self
+        choosenim ${{ matrix.nim-version }}
+    - name: Run test
+      run: nimble -y test
+
+  documentation:
+    needs: core
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Cache choosenim
+      id: cache-choosenim
+      uses: actions/cache@v4
+      with:
+        path: ~/.choosenim
+        key: ${{ runner.os }}-choosenim
+    - name: Cache nimble
+      id: cache-nimble
+      uses: actions/cache@v4
+      with:
+        path: ~/.nimble
+        key: ${{ runner.os }}-nimble
+    - name: Install choosenim / Nim
+      if: steps.cache-choosenim.outputs.cache-hit != 'true' || steps.cache-nimble.outputs.cache-hit != 'true'
+      run: |
+        curl https://nim-lang.org/choosenim/init.sh -sSf > init.sh
+        sh init.sh -y
+    - name: Set nimble path
+      run: echo "$HOME/.nimble/bin" >> $GITHUB_PATH
+    - name: Update choosenim and select version
+      run: |
+        choosenim update self
+        choosenim stable
+    - name: Generate documentations
+      run: nimble docs
+    - name: Deploy
+      if: github.ref == 'refs/heads/devel'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
