@@ -1,5 +1,6 @@
-Collection	stones/collections.html#Collection	collections: Collection	
-OutOfRangeError	stones/collections.html#OutOfRangeError	collections: OutOfRangeError	
-fillCollection	stones/collections.html#fillCollection,Collection[T],Collection[T]	collections: fillCollection[T](collection: var Collection[T]; toAdd: Collection[T]): void	
-sum	stones/collections.html#sum,Collection[int]	collections: sum[int](collection: Collection[int]): int	
-sort	stones/collections.html#sort,Collection[int]	collections: sort[int](collection: Collection[int]): seq[int]	
+nimTitle	collections	stones/collections.html	module src/stones/collections		0
+nim	Collection	stones/collections.html#Collection	type Collection		4
+nim	OutOfRangeError	stones/collections.html#OutOfRangeError	object OutOfRangeError		7
+nim	fillCollection	stones/collections.html#fillCollection,Collection[T],Collection[T]	proc fillCollection[T](collection: var Collection[T]; toAdd: Collection[T]): void		9
+nim	sum	stones/collections.html#sum,Collection[int]	proc sum[int](collection: Collection[int]): int		16
+nim	sort	stones/collections.html#sort,Collection[int]	proc sort[int](collection: Collection[int]): seq[int]		21

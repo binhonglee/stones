@@ -1,1 +1,2 @@
-randString	stones/rand.html#randString,int	rand: randString(length: int): string	
+nimTitle	rand	stones/rand.html	module src/stones/rand		0
+nim	randString	stones/rand.html#randString,int	proc randString(length: int): string		3

@@ -1,14 +1,17 @@
-InvalidIndexError	stones/strlib.html#InvalidIndexError	strlib: InvalidIndexError	
-NotADigitError	stones/strlib.html#NotADigitError	strlib: NotADigitError	
-count	stones/strlib.html#count,string,HashSet[char]	strlib: count(word: string; chars: HashSet[char]): Table[char, int]	
-parseInt	stones/strlib.html#parseInt,char	strlib: parseInt(num: char): int	
-parseInt	stones/strlib.html#parseInt,string	strlib: parseInt(num: string): int	
-substr	stones/strlib.html#substr,string,int,int	strlib: substr(s: var string; first, last: int): void	
-trim	stones/strlib.html#trim,string	strlib: trim(s: var string): void	
-replace	stones/strlib.html#replace,seq[char],Table[string,string]	strlib: replace(input: var seq[char]; replacements: Table[string, string]): void	
-replace	stones/strlib.html#replace,string,Table[string,string]	strlib: replace(s: string; replacements: Table[string, string]): string	
-`$`	stones/strlib.html#$,seq[char]	strlib: `$`(input: seq[char]): string	
-seqCharToString	stones/strlib.html#seqCharToString,seq[char]	strlib: seqCharToString(input: seq[char]): string	
-width	stones/strlib.html#width,seq[string]	strlib: width(strs: seq[string]): seq[int]	
-find	stones/strlib.html#find,string,char,char,string	strlib: find(str: string; open: char; close: char; toFind: string): seq[int]	
-split	stones/strlib.html#split,string,char,char,string	strlib: split(str: string; open: char; close: char; separator: string): seq[string]	
+nimTitle	strlib	stones/strlib.html	module src/stones/strlib		0
+nim	InvalidIndexError	stones/strlib.html#InvalidIndexError	object InvalidIndexError		8
+nim	NotADigitError	stones/strlib.html#NotADigitError	object NotADigitError		11
+nim	count	stones/strlib.html#count,string,HashSet[char]	proc count(word: string; chars: HashSet[char]): Table[char, int]		13
+nim	parseInt	stones/strlib.html#parseInt,char	proc parseInt(num: char): int		26
+nim	parseInt	stones/strlib.html#parseInt,string	proc parseInt(num: string): int		33
+nim	substr	stones/strlib.html#substr,string,int,int	proc substr(s: var string; first, last: int): void		45
+nim	trim	stones/strlib.html#trim,string	proc trim(s: var string): void		58
+nim	replace	stones/strlib.html#replace,seq[char],Table[string,string]	proc replace(input: var seq[char]; replacements: Table[string, string]): void		80
+nim	replace	stones/strlib.html#replace,string,Table[string,string]	proc replace(s: string; replacements: Table[string, string]): string		107
+nim	`$`	stones/strlib.html#$,seq[char]	proc `$`(input: seq[char]): string		139
+nim	seqCharToString	stones/strlib.html#seqCharToString,seq[char]	proc seqCharToString(input: seq[char]): string		147
+nim	width	stones/strlib.html#width,seq[string]	proc width(strs: seq[string]): seq[int]		152
+nim	find	stones/strlib.html#find,string,char,char,string	proc find(str: string; open: char; close: char; toFind: string): seq[int]		159
+nim	split	stones/strlib.html#split,string,char,char,string	proc split(str: string; open: char; close: char; separator: string): seq[string]		182
+nimgrp	replace	stones/strlib.html#replace-procs-all	proc		80
+nimgrp	parseint	stones/strlib.html#parseInt-procs-all	proc		26

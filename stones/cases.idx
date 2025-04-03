@@ -1,27 +1,28 @@
-UnsupportedCharacterError	stones/cases.html#UnsupportedCharacterError	cases: UnsupportedCharacterError	
-Default	stones/cases.html#Default	Case.Default	
-Camel	stones/cases.html#Camel	Case.Camel	
-Kebab	stones/cases.html#Kebab	Case.Kebab	
-Lower	stones/cases.html#Lower	Case.Lower	
-Pascal	stones/cases.html#Pascal	Case.Pascal	
-Snake	stones/cases.html#Snake	Case.Snake	
-Upper	stones/cases.html#Upper	Case.Upper	
-Case	stones/cases.html#Case	cases: Case	
-setAcronyms	stones/cases.html#setAcronyms,HashSet[string]	cases: setAcronyms(configAcronyms: HashSet[string]): void	
-fromCamelCase	stones/cases.html#fromCamelCase,string,HashSet[string]	cases: fromCamelCase(s: string; acronyms: HashSet[string] = acronyms): string	
-toCamelCase	stones/cases.html#toCamelCase,string,HashSet[string]	cases: toCamelCase(s: string; acronyms: HashSet[string] = acronyms): string	
-fromKebabCase	stones/cases.html#fromKebabCase,string	cases: fromKebabCase(s: string): string	
-toKebabCase	stones/cases.html#toKebabCase,string	cases: toKebabCase(s: string): string	
-toLowerCase	stones/cases.html#toLowerCase,string	cases: toLowerCase(s: string): string	
-fromPascalCase	stones/cases.html#fromPascalCase,string,HashSet[string]	cases: fromPascalCase(s: string; acronyms: HashSet[string] = acronyms): string	
-toPascalCase	stones/cases.html#toPascalCase,string,HashSet[string]	cases: toPascalCase(s: string; acronyms: HashSet[string] = acronyms): string	
-fromUpperCase	stones/cases.html#fromUpperCase,string	cases: fromUpperCase(s: string): string	
-toUpperCase	stones/cases.html#toUpperCase,string	cases: toUpperCase(s: string): string	
-camelCase	stones/cases.html#camelCase,string,HashSet[string]	cases: camelCase(s: string; acronyms: HashSet[string] = acronyms): string	
-kebabCase	stones/cases.html#kebabCase,string	cases: kebabCase(s: string): string	
-lowerCase	stones/cases.html#lowerCase,string	cases: lowerCase(s: string): string	
-pascalCase	stones/cases.html#pascalCase,string,HashSet[string]	cases: pascalCase(s: string; acronyms: HashSet[string] = acronyms): string	
-upperCase	stones/cases.html#upperCase,string	cases: upperCase(s: string): string	
-currentCase	stones/cases.html#currentCase,string	cases: currentCase(s: string): Case	
-format	stones/cases.html#format,Case,string,HashSet[string]	cases: format(c: Case; s: string; acronyms: HashSet[string] = acronyms): string	
-allCases	stones/cases.html#allCases,string,Case,HashSet[string]	cases: allCases(s: string; c: Case = Default; acronyms: HashSet[string] = acronyms): Table[Case,\n    string]	
+nimTitle	cases	stones/cases.html	module src/stones/cases		0
+nim	UnsupportedCharacterError	stones/cases.html#UnsupportedCharacterError	object UnsupportedCharacterError		8
+nim	Default	stones/cases.html#Default	Case.Default		18
+nim	Camel	stones/cases.html#Camel	Case.Camel		18
+nim	Kebab	stones/cases.html#Kebab	Case.Kebab		18
+nim	Lower	stones/cases.html#Lower	Case.Lower		18
+nim	Pascal	stones/cases.html#Pascal	Case.Pascal		18
+nim	Snake	stones/cases.html#Snake	Case.Snake		18
+nim	Upper	stones/cases.html#Upper	Case.Upper		18
+nim	Case	stones/cases.html#Case	enum Case		18
+nim	setAcronyms	stones/cases.html#setAcronyms,HashSet[string]	proc setAcronyms(configAcronyms: HashSet[string]): void		28
+nim	fromCamelCase	stones/cases.html#fromCamelCase,string,HashSet[string]	proc fromCamelCase(s: string; acronyms: HashSet[string] = acronyms): string		32
+nim	toCamelCase	stones/cases.html#toCamelCase,string,HashSet[string]	proc toCamelCase(s: string; acronyms: HashSet[string] = acronyms): string		50
+nim	fromKebabCase	stones/cases.html#fromKebabCase,string	proc fromKebabCase(s: string): string		63
+nim	toKebabCase	stones/cases.html#toKebabCase,string	proc toKebabCase(s: string): string		67
+nim	toLowerCase	stones/cases.html#toLowerCase,string	proc toLowerCase(s: string): string		71
+nim	fromPascalCase	stones/cases.html#fromPascalCase,string,HashSet[string]	proc fromPascalCase(s: string; acronyms: HashSet[string] = acronyms): string		75
+nim	toPascalCase	stones/cases.html#toPascalCase,string,HashSet[string]	proc toPascalCase(s: string; acronyms: HashSet[string] = acronyms): string		87
+nim	fromUpperCase	stones/cases.html#fromUpperCase,string	proc fromUpperCase(s: string): string		91
+nim	toUpperCase	stones/cases.html#toUpperCase,string	proc toUpperCase(s: string): string		95
+nim	camelCase	stones/cases.html#camelCase,string,HashSet[string]	proc camelCase(s: string; acronyms: HashSet[string] = acronyms): string		99
+nim	kebabCase	stones/cases.html#kebabCase,string	proc kebabCase(s: string): string		107
+nim	lowerCase	stones/cases.html#lowerCase,string	proc lowerCase(s: string): string		112
+nim	pascalCase	stones/cases.html#pascalCase,string,HashSet[string]	proc pascalCase(s: string; acronyms: HashSet[string] = acronyms): string		117
+nim	upperCase	stones/cases.html#upperCase,string	proc upperCase(s: string): string		125
+nim	currentCase	stones/cases.html#currentCase,string	proc currentCase(s: string): Case		130
+nim	format	stones/cases.html#format,Case,string,HashSet[string]	proc format(c: Case; s: string; acronyms: HashSet[string] = acronyms): string		181
+nim	allCases	stones/cases.html#allCases,string,Case,HashSet[string]	proc allCases(s: string; c: Case = Default; acronyms: HashSet[string] = acronyms): Table[\n    Case, string]		217

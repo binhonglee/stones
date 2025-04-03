@@ -1,13 +1,17 @@
-Stack	stones/sq.html#Stack	sq: Stack	
-Queue	stones/sq.html#Queue	sq: Queue	
-initStack	stones/sq.html#initStack	sq: initStack[T](): Stack[T]	
-initStack	stones/sq.html#initStack,Collection[T]	sq: initStack[T](collection: Collection[T]): Stack[T]	
-add	stones/sq.html#add,Stack[T],SinglyLinkedNode[T]	sq: add[T](stack: var Stack[T]; node: SinglyLinkedNode[T]): void	
-add	stones/sq.html#add,Stack[T],T	sq: add[T](stack: var Stack[T]; value: T): void	
-initQueue	stones/sq.html#initQueue	sq: initQueue[T](): Queue[T]	
-initQueue	stones/sq.html#initQueue,Collection[T]	sq: initQueue[T](collection: Collection[T]): Queue[T]	
-add	stones/sq.html#add,Queue[T],SinglyLinkedNode[T]	sq: add[T](queue: var Queue[T]; node: SinglyLinkedNode[T]): void	
-add	stones/sq.html#add,Queue[T],T	sq: add[T](queue: var Queue[T]; value: T): void	
-peek	stones/sq.html#peek,SomeList[T]	sq: peek[T](list: var SomeList[T]): (SinglyLinkedNode[T])	
-pop	stones/sq.html#pop,SomeList[T]	sq: pop[T](list: var SomeList[T]): (SinglyLinkedNode[T])	
-len	stones/sq.html#len,SomeList[T]	sq: len[T](list: var SomeList[T]): int	
+nimTitle	sq	stones/sq.html	module src/stones/sq		0
+nim	Stack	stones/sq.html#Stack	type Stack		5
+nim	Queue	stones/sq.html#Queue	type Queue		9
+nim	initStack	stones/sq.html#initStack	proc initStack[T](): Stack[T]		19
+nim	initStack	stones/sq.html#initStack,Collection[T]	proc initStack[T](collection: Collection[T]): Stack[T]		24
+nim	add	stones/sq.html#add,Stack[T],SinglyLinkedNode[T]	proc add[T](stack: var Stack[T]; node: SinglyLinkedNode[T]): void		28
+nim	add	stones/sq.html#add,Stack[T],T	proc add[T](stack: var Stack[T]; value: T): void		32
+nim	initQueue	stones/sq.html#initQueue	proc initQueue[T](): Queue[T]		35
+nim	initQueue	stones/sq.html#initQueue,Collection[T]	proc initQueue[T](collection: Collection[T]): Queue[T]		40
+nim	add	stones/sq.html#add,Queue[T],SinglyLinkedNode[T]	proc add[T](queue: var Queue[T]; node: SinglyLinkedNode[T]): void		44
+nim	add	stones/sq.html#add,Queue[T],T	proc add[T](queue: var Queue[T]; value: T): void		48
+nim	peek	stones/sq.html#peek,SomeList[T]	proc peek[T](list: var SomeList[T]): SinglyLinkedNode[T]		51
+nim	pop	stones/sq.html#pop,SomeList[T]	proc pop[T](list: var SomeList[T]): SinglyLinkedNode[T]		54
+nim	len	stones/sq.html#len,SomeList[T]	proc len[T](list: var SomeList[T]): int		59
+nimgrp	initqueue	stones/sq.html#initQueue-procs-all	proc		35
+nimgrp	add	stones/sq.html#add-procs-all	proc		28
+nimgrp	initstack	stones/sq.html#initStack-procs-all	proc		19

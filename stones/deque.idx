@@ -1,12 +1,16 @@
-Deque	stones/deque.html#Deque	deque: Deque	
-initDeque	stones/deque.html#initDeque	deque: initDeque[T](): Deque[T]	
-initDeque	stones/deque.html#initDeque,Collection[T]	deque: initDeque[T](collection: Collection[T]): Deque[T]	
-addFront	stones/deque.html#addFront,Deque[T],DoublyLinkedNode[T]	deque: addFront[T](deque: var Deque[T]; node: DoublyLinkedNode[T])	
-addFront	stones/deque.html#addFront,Deque[T],T	deque: addFront[T](deque: var Deque[T]; value: T)	
-addRear	stones/deque.html#addRear,Deque[T],DoublyLinkedNode[T]	deque: addRear[T](deque: var Deque[T]; node: DoublyLinkedNode[T])	
-addRear	stones/deque.html#addRear,Deque[T],T	deque: addRear[T](deque: var Deque[T]; value: T)	
-peekFront	stones/deque.html#peekFront,Deque[T]	deque: peekFront[T](deque: var Deque[T]): (DoublyLinkedNode[T])	
-peekRear	stones/deque.html#peekRear,Deque[T]	deque: peekRear[T](deque: var Deque[T]): (DoublyLinkedNode[T])	
-popFront	stones/deque.html#popFront,Deque[T]	deque: popFront[T](deque: var Deque[T]): (DoublyLinkedNode[T])	
-popRear	stones/deque.html#popRear,Deque[T]	deque: popRear[T](deque: var Deque[T]): (DoublyLinkedNode[T])	
-len	stones/deque.html#len,Deque[T]	deque: len[T](deque: var Deque[T]): int	
+nimTitle	deque	stones/deque.html	module src/stones/deque		0
+nim	Deque	stones/deque.html#Deque	type Deque		9
+nim	initDeque	stones/deque.html#initDeque	proc initDeque[T](): Deque[T]		13
+nim	initDeque	stones/deque.html#initDeque,Collection[T]	proc initDeque[T](collection: Collection[T]): Deque[T]		17
+nim	addFront	stones/deque.html#addFront,Deque[T],DoublyLinkedNode[T]	proc addFront[T](deque: var Deque[T]; node: DoublyLinkedNode[T])		23
+nim	addFront	stones/deque.html#addFront,Deque[T],T	proc addFront[T](deque: var Deque[T]; value: T)		27
+nim	addRear	stones/deque.html#addRear,Deque[T],DoublyLinkedNode[T]	proc addRear[T](deque: var Deque[T]; node: DoublyLinkedNode[T])		30
+nim	addRear	stones/deque.html#addRear,Deque[T],T	proc addRear[T](deque: var Deque[T]; value: T)		34
+nim	peekFront	stones/deque.html#peekFront,Deque[T]	proc peekFront[T](deque: var Deque[T]): DoublyLinkedNode[T]		37
+nim	peekRear	stones/deque.html#peekRear,Deque[T]	proc peekRear[T](deque: var Deque[T]): DoublyLinkedNode[T]		40
+nim	popFront	stones/deque.html#popFront,Deque[T]	proc popFront[T](deque: var Deque[T]): DoublyLinkedNode[T]		43
+nim	popRear	stones/deque.html#popRear,Deque[T]	proc popRear[T](deque: var Deque[T]): DoublyLinkedNode[T]		49
+nim	len	stones/deque.html#len,Deque[T]	proc len[T](deque: var Deque[T]): int		55
+nimgrp	initdeque	stones/deque.html#initDeque-procs-all	proc		13
+nimgrp	addfront	stones/deque.html#addFront-procs-all	proc		23
+nimgrp	addrear	stones/deque.html#addRear-procs-all	proc		30

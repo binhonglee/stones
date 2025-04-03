@@ -1,12 +1,15 @@
-ConflictingValueError	stones/genlib.html#ConflictingValueError	genlib: ConflictingValueError	
-DuplicateKeyError	stones/genlib.html#DuplicateKeyError	genlib: DuplicateKeyError	
-`|`	stones/genlib.html#|,T,T	genlib: `|`[T](a, b: T): Conditions[T]	
-`?`	stones/genlib.html#?.t,bool,Conditions[T]	genlib: `?`[T](cond: bool; p: Conditions[T]): T	
-`??`	stones/genlib.html#??.t,T,T	genlib: `??`[T](x: T; y: T): T	
-merge	stones/genlib.html#merge,Table[A,B],Table[A,B],bool	genlib: merge[A, B](first: var Table[A, B]; second: Table[A, B]; ignoreDup: bool = true): void	
-merge	stones/genlib.html#merge,HashSet[T],HashSet[T]	genlib: merge[T](first: var HashSet[T]; second: HashSet[T]): void	
-getResult	stones/genlib.html#getResult,T,proc(T)	genlib: getResult[T](input: T; p: proc (x: var T)): T	
-getResult	stones/genlib.html#getResult,T,T,proc(T,T)	genlib: getResult[T](input: T; arg: T; p: proc (x: var T; y: T)): T	
-getResult	stones/genlib.html#getResult,A,B,proc(A,B)	genlib: getResult[A, B](input: A; arg: B; p: proc (x: var A; y: B)): A	
-getResult	stones/genlib.html#getResult,T,proc(T,varargs[T]),varargs[T]	genlib: getResult[T](input: T; p: proc (x: var T; y: varargs[T]); args: varargs[T]): T	
-getResult	stones/genlib.html#getResult,A,proc(A,varargs[B]),varargs[B]	genlib: getResult[A, B](input: A; p: proc (x: var A; y: varargs[B]); args: varargs[B]): A	
+nimTitle	genlib	stones/genlib.html	module src/stones/genlib		0
+nim	ConflictingValueError	stones/genlib.html#ConflictingValueError	object ConflictingValueError		5
+nim	DuplicateKeyError	stones/genlib.html#DuplicateKeyError	object DuplicateKeyError		8
+nim	`|`	stones/genlib.html#|,T,T	proc `|`[T](a, b: T): Conditions[T]		15
+nim	`?`	stones/genlib.html#?.t,bool,Conditions[T]	template `?`[T](cond: bool; p: Conditions[T]): T		18
+nim	`??`	stones/genlib.html#??.t,T,T	template `??`[T](x: T; y: T): T		34
+nim	merge	stones/genlib.html#merge,Table[A,B],Table[A,B],bool	proc merge[A, B](first: var Table[A, B]; second: Table[A, B]; ignoreDup: bool = true): void		53
+nim	merge	stones/genlib.html#merge,HashSet[T],HashSet[T]	proc merge[T](first: var HashSet[T]; second: HashSet[T]): void		77
+nim	getResult	stones/genlib.html#getResult,T,proc(T)	proc getResult[T](input: T; p: proc (x: var T)): T		83
+nim	getResult	stones/genlib.html#getResult,T,T,proc(T,T)	proc getResult[T](input: T; arg: T; p: proc (x: var T; y: T)): T		88
+nim	getResult	stones/genlib.html#getResult,A,B,proc(A,B)	proc getResult[A, B](input: A; arg: B; p: proc (x: var A; y: B)): A		93
+nim	getResult	stones/genlib.html#getResult,T,proc(T,varargs[T]),varargs[T]	proc getResult[T](input: T; p: proc (x: var T; y: varargs[T]); args: varargs[T]): T		98
+nim	getResult	stones/genlib.html#getResult,A,proc(A,varargs[B]),varargs[B]	proc getResult[A, B](input: A; p: proc (x: var A; y: varargs[B]); args: varargs[B]): A		103
+nimgrp	getresult	stones/genlib.html#getResult-procs-all	proc		83
+nimgrp	merge	stones/genlib.html#merge-procs-all	proc		53

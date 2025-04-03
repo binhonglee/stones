@@ -1,11 +1,12 @@
-GenericError	stones/log.html#GenericError	log: GenericError	
-FATAL	stones/log.html#FATAL	AlertLevel.FATAL	
-ERROR	stones/log.html#ERROR	AlertLevel.ERROR	
-SUCCESS	stones/log.html#SUCCESS	AlertLevel.SUCCESS	
-DEPRECATED	stones/log.html#DEPRECATED	AlertLevel.DEPRECATED	
-WARNING	stones/log.html#WARNING	AlertLevel.WARNING	
-INFO	stones/log.html#INFO	AlertLevel.INFO	
-DEBUG	stones/log.html#DEBUG	AlertLevel.DEBUG	
-AlertLevel	stones/log.html#AlertLevel	log: AlertLevel	
-LOG	stones/log.html#LOG,AlertLevel,string,typedesc	log: LOG(level: AlertLevel; message: string; exception: typedesc = GenericError): void	
-setLevel	stones/log.html#setLevel,AlertLevel	log: setLevel(level: AlertLevel): void	
+nimTitle	log	stones/log.html	module src/stones/log		0
+nim	GenericError	stones/log.html#GenericError	object GenericError		6
+nim	FATAL	stones/log.html#FATAL	AlertLevel.FATAL		10
+nim	ERROR	stones/log.html#ERROR	AlertLevel.ERROR		10
+nim	SUCCESS	stones/log.html#SUCCESS	AlertLevel.SUCCESS		10
+nim	DEPRECATED	stones/log.html#DEPRECATED	AlertLevel.DEPRECATED		10
+nim	WARNING	stones/log.html#WARNING	AlertLevel.WARNING		10
+nim	INFO	stones/log.html#INFO	AlertLevel.INFO		10
+nim	DEBUG	stones/log.html#DEBUG	AlertLevel.DEBUG		10
+nim	AlertLevel	stones/log.html#AlertLevel	enum AlertLevel		10
+nim	LOG	stones/log.html#LOG,AlertLevel,string,typedesc	proc LOG(level: AlertLevel; message: string; exception: typedesc = GenericError): void		51
+nim	setLevel	stones/log.html#setLevel,AlertLevel	proc setLevel(level: AlertLevel): void		58
